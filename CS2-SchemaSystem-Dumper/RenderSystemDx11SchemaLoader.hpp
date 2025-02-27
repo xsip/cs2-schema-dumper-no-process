@@ -19,11 +19,11 @@ public:
 			return true;
 
 		std::vector<const char*> dlls = {
-			"D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\game\\bin\\win64\\amd_ags_x64.dll",
-			"D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\game\\bin\\win64\\D3DCOMPILER_47.dll",
-			"D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\game\\bin\\win64\\tier0.dll"
+			"game\\bin\\win64\\amd_ags_x64.dll",
+			"game\\bin\\win64\\D3DCOMPILER_47.dll",
+			"game\\bin\\win64\\tier0.dll"
 		};
-		mainDll = "D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\game\\bin\\win64\\rendersystemdx11.dll";
+		mainDll = "game\\bin\\win64\\rendersystemdx11.dll";
 
 		return dllsLoaded = SchemaLoader::LoadNeededDlls(dlls, mainDll);
 	}

@@ -27,8 +27,8 @@ private:
 	inline static std::map<const char*, boolean> installedSchemaBindings = std::map<const char*, boolean>{};
 
 private:
-	inline static const char* tier0Path = "D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\game\\bin\\win64\\tier0.dll";
-	inline static const char* schemaSystemPath = "D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\game\\bin\\win64\\schemasystem.dll";
+	inline static const char* tier0Path = "game\\bin\\win64\\tier0.dll";
+	inline static const char* schemaSystemPath = "game\\bin\\win64\\schemasystem.dll";
 
 private:
 	inline static SDK::CSchemaSystem* pSchemaSystem = NULL;
@@ -108,26 +108,27 @@ public:
 	}
 
 	inline static bool LoadNeededDlls(std::vector<const char*> dependencyDlls, const char* mainDll) {
-
+		std::string tier0FullPath = std::string(BaseLoader::basePath) + std::string(SchemaLoader::tier0Path);
+		std::string schemaSystemFullPath = std::string(BaseLoader::basePath) + std::string(SchemaLoader::schemaSystemPath);
 		if (SchemaLoader::loadedMainDlls[mainDll])
 			return true;
 
 		if (SchemaLoader::schemaSystemDllHandle == NULL || SchemaLoader::pSchemaSystem == NULL || SchemaLoader::tier0DllHandle == NULL) {
 
 			if (SchemaLoader::tier0DllHandle == NULL) {
-				SchemaLoader::tier0DllHandle = LoadLibrary(_T(BaseLoader::basePath SchemaLoader::tier0Path));
+				SchemaLoader::tier0DllHandle = LoadLibrary(_T(tier0FullPath.c_str()));
 
 				if (SchemaLoader::tier0DllHandle == NULL) {
 					printf("tier0.dll couldn't be loaded: 0x%x\n", GetLastError());
 					return false;
 				}
-				SchemaLoader::dependencyMap.insert({ SchemaLoader::tier0Path, SchemaLoader::tier0DllHandle });
+				SchemaLoader::dependencyMap.insert({ tier0FullPath.c_str(), SchemaLoader::tier0DllHandle});
 			}
 			
 
 			
 			if (SchemaLoader::schemaSystemDllHandle == NULL) {
-				SchemaLoader::schemaSystemDllHandle = LoadLibrary(_T(schemaSystemPath));
+				SchemaLoader::schemaSystemDllHandle = LoadLibrary(_T(schemaSystemFullPath.c_str()));
 
 				if (SchemaLoader::schemaSystemDllHandle == NULL) {
 					printf("schemaSystem.dll couldn't be loaded 0x%x\n", GetLastError());

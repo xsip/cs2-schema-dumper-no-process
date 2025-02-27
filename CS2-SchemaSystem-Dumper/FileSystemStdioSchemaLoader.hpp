@@ -17,9 +17,9 @@ public:
 			return true;
 
 		std::vector<const char*> dlls = {
-			"D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\game\\bin\\win64\\steam_api64.dll",
+			"game\\bin\\win64\\steam_api64.dll",
 		};
-		mainDll = "D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\game\\bin\\win64\\filesystem_stdio.dll";
+		mainDll = "game\\bin\\win64\\filesystem_stdio.dll";
 
 		return dllsLoaded = SchemaLoader::LoadNeededDlls(dlls, mainDll);
 	}

@@ -17,10 +17,10 @@ public:
 			return true;
 
 		std::vector<const char*> dlls = {
-			"D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\game\\bin\\win64\\steam_api64.dll",
-			"D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\game\\bin\\win64\\tier0.dll"
+			"game\\bin\\win64\\steam_api64.dll",
+			"game\\bin\\win64\\tier0.dll"
 		};
-		mainDll = "D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\game\\csgo\\bin\\win64\\matchmaking.dll";
+		mainDll = "game\\csgo\\bin\\win64\\matchmaking.dll";
 
 		return dllsLoaded = SchemaLoader::LoadNeededDlls(dlls, mainDll);
 	}
