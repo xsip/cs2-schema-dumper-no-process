@@ -10,6 +10,7 @@
 #include "memory.h"
 #include "CSchemaSystem.h"
 #include "GlobalLoader.hpp"
+#include "SchemaLoadingHandler.hpp"
 
 int main(int argc, char* argv[]) {
 	// g_Memory.Initialize("cs2.exe");
@@ -29,7 +30,7 @@ int main(int argc, char* argv[]) {
 		}
 	}
 	auto pSchemaSystem = GlobalLoader::GetSchemaSystem();
-	
+	SchemaLoadingHandler::DebugLog();
 	printf("pSchemaSystem001: 0x%p\n", pSchemaSystem);
 	printf("Entries: %i\n", pSchemaSystem->m_nScopeSize);
 

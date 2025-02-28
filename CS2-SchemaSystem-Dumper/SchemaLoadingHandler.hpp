@@ -23,8 +23,8 @@ private:
 	inline static HINSTANCE schemaSystemDllHandle = NULL;
 	inline static HINSTANCE tier0DllHandle = NULL;
 	inline static std::map<const char*, HINSTANCE> dependencyMap = std::map<const char*, HINSTANCE>{};
-	inline static std::map<const char*, boolean> loadedMainDlls = std::map<const char*, boolean>{};
-	inline static std::map<const char*, boolean> installedSchemaBindings = std::map<const char*, boolean>{};
+	inline static std::map<const char*, bool> loadedMainDlls = std::map<const char*, bool>{};
+	inline static std::map<const char*, bool> installedSchemaBindings = std::map<const char*, bool>{};
 
 private:
 	inline static const char* tier0Path = "game\\bin\\win64\\tier0.dll";
@@ -41,6 +41,53 @@ public:
 	SchemaLoadingHandler() {
 
 	};
+
+	inline static void LogDependencyMap() {
+		
+		std::map<const char*, HINSTANCE>::iterator it;
+		
+		printf("\n\nDependencyMap:\n");
+
+		for (it = SchemaLoadingHandler::dependencyMap.begin(); it != SchemaLoadingHandler::dependencyMap.end(); it++)
+		{
+			printf("\t%s: 0x%p\n", it->first, it->second);
+		}
+	}
+	inline static void LogLoadedMainDlls() {
+		
+		std::map<const char*, bool>::iterator it;
+
+		printf("\n\nLoaded Main DLLs:\n");
+
+
+		for (it = SchemaLoadingHandler::loadedMainDlls.begin(); it != SchemaLoadingHandler::loadedMainDlls.end(); it++)
+		{
+			printf("\t%s: %i\n", it->first, it->second);
+		}
+	}
+
+	inline static void LogInstalledBindings() {
+		
+		std::map<const char*, bool>::iterator it;
+
+		printf("\n\nInstalledSchemaBindings:\n");
+
+
+		for (it = SchemaLoadingHandler::installedSchemaBindings.begin(); it != SchemaLoadingHandler::installedSchemaBindings.end(); it++)
+		{
+			printf("\t%s: %i\n", it->first, it->second);
+		}
+	}
+
+	inline static void DebugLog() {
+		SchemaLoadingHandler::LogDependencyMap();
+		SchemaLoadingHandler::LogLoadedMainDlls();
+		SchemaLoadingHandler::LogInstalledBindings();
+	}
+
+	static bool IsInDependencyMap(const char* dllWithPath);
+	static bool IsInLoadedMainDllsMap(const char* dllWithPath);
+	static bool IsInInstalledSchemaBindings(const char* dllWithPath);
 
 	template<typename T>
 	inline static _CreateInterface<T> GetCreateInterfaceFn(const char* dllName) {
