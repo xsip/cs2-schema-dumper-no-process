@@ -67,12 +67,14 @@ namespace SDK
 	public:
 		void* vfptr;
 		char m_szName[256];
-
-		S2_PAD(0x338);
+		CSchemaSystemTypeScope* pGlobalScope;
+		S2_PAD(0x338 - 0x8);
 
 		CSchemaDeclaredClassEntry* m_pDeclaredClasses;
+		S2_PAD(0x20);
+		void* m_pEnumBindings;
 
-		S2_PAD(0xE);
+		S2_PAD(0x6);
 
 		uint16_t m_nNumDeclaredClasses;
 	};

@@ -16,7 +16,10 @@ int main(int argc, char* argv[]) {
 	// g_Memory.Initialize("cs2.exe");
 	SetConsoleTitle("CS2 SchemaDumper");
 	BaseLoader::basePath = "D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\";
-
+	printf("m_pDeclaredClasses: 0x%x\n", offsetof(SDK::CSchemaSystemTypeScope, m_pDeclaredClasses));
+	printf("pGlobalScope: 0x%x\n", offsetof(SDK::CSchemaSystemTypeScope, pGlobalScope));
+	printf("m_pEnumBindings: 0x%x\n", offsetof(SDK::CSchemaSystemTypeScope, m_pEnumBindings));
+	printf("m_nNumDeclaredClasses: 0x%x\n", offsetof(SDK::CSchemaSystemTypeScope, m_nNumDeclaredClasses));
 	if (!GlobalLoader::Initialize()) {
 		printf("Error initializing!!\n");
 		while (true) {

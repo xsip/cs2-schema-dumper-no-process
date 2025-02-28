@@ -39,6 +39,10 @@ public:
 			infoFile << "// Number of Classes In Scope: " << currentScope->m_nNumDeclaredClasses << std::endl << std::endl;
 			infoFile << "// Classes: " << std::endl;
 
+			if (currentScope->m_pEnumBindings) {
+				printf("Class: 0x%p ( %s ) | %i\n", &pSchemaSystem->m_pScopeArray[scopeIdx], currentScope->m_szName, currentScope->m_nNumDeclaredClasses);
+
+			}
 			
 			if (currentScope->m_nNumDeclaredClasses == 65535)
 				continue;
@@ -47,6 +51,7 @@ public:
 
 			for (int classIdx = 0; classIdx < currentScope->m_nNumDeclaredClasses; classIdx++) {
 				auto currentClassDef = currentScope->m_pDeclaredClasses[classIdx];
+				
 				auto classData = currentClassDef.m_pDeclaredClass->m_Class;
 				auto numFields = classData->m_nNumFields;
 
@@ -59,12 +64,15 @@ public:
 				currentClassFile << "\tnamespace " << dllToFolderName.c_str() << " {" << std::endl;
 				currentClassFile << "\t\tnamespace " << classData->m_szName << " {" << std::endl;
 				infoFile << "//\t" << classData->m_szName << " ( " << numFields << " properties )" << std::endl;
-				
+				if (strstr(classData->m_szName, "CCSPlayer_PingServices")) {
+					printf("Class: 0x%p ( %s | %s )\n", &currentScope->m_pDeclaredClasses[classIdx], classData->m_szName, dllToFolderName.c_str());
+
+				}
 				// printf("\tClassDefinition: %s ( %i fields )\n", classData->m_szName, numFields);
 				for (int propertyIdx = 0; propertyIdx < numFields; propertyIdx++) {
 					currentClassFile << "\t\t\t uintptr_t " << classData->m_pFields[propertyIdx].m_szName << " = 0x" << std::hex << classData->m_pFields[propertyIdx].m_nOffset << "; // " << classData->m_pFields[propertyIdx].m_pType->m_szName << std::endl;
-					/*if (strstr(classData->m_szName, "BaseEntity")) {
-						printf("Metadata: 0x%p\n", &classData->m_pFields[propertyIdx]);
+					/*if (strstr(classData->m_szName, "BaseEntity") && classData->m_pFields[propertyIdx].m_nMetadataSize) {
+						printf("Prop: 0x%p\n", &classData->m_pFields[propertyIdx]);
 						printf("\t\tField: %s | Offset: 0x%x | %s\n", classData->m_pFields[propertyIdx].m_szName, classData->m_pFields[propertyIdx].m_nOffset, classData->m_pFields[propertyIdx].m_pType->m_szName);
 					}*/
 				}
