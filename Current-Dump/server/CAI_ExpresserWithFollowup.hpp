@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CAI_ExpresserWithFollowup {
-			 uintptr_t m_pPostponedFollowup = 0x78;
+			 uintptr_t m_pPostponedFollowup = 0x78; // ResponseFollowup*
 		}
 	}
 }

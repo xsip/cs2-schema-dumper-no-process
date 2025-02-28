@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace client {
 		namespace CPulseCell_Inflow_Wait {
-			 uintptr_t m_WakeResume = 0x48;
+			 uintptr_t m_WakeResume = 0x48; // CPulse_ResumePoint
 		}
 	}
 }

@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CKnife {
-			 uintptr_t m_bFirstAttack = 0xf70;
+			 uintptr_t m_bFirstAttack = 0xf70; // bool
 		}
 	}
 }

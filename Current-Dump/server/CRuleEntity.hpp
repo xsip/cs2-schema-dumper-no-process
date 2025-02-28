@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CRuleEntity {
-			 uintptr_t m_iszMaster = 0x790;
+			 uintptr_t m_iszMaster = 0x790; // CUtlSymbolLarge
 		}
 	}
 }

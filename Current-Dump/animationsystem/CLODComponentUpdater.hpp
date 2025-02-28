@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace animationsystem {
 		namespace CLODComponentUpdater {
-			 uintptr_t m_nServerLOD = 0x30;
+			 uintptr_t m_nServerLOD = 0x30; // int32
 		}
 	}
 }

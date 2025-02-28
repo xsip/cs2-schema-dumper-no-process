@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace client {
 		namespace CStopwatch {
-			 uintptr_t m_interval = 0xc;
+			 uintptr_t m_interval = 0xc; // float32
 		}
 	}
 }

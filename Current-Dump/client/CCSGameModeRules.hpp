@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace client {
 		namespace CCSGameModeRules {
-			 uintptr_t __m_pChainEntity = 0x8;
+			 uintptr_t __m_pChainEntity = 0x8; // CNetworkVarChainer
 		}
 	}
 }

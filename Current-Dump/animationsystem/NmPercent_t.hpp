@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace animationsystem {
 		namespace NmPercent_t {
-			 uintptr_t m_flValue = 0x0;
+			 uintptr_t m_flValue = 0x0; // float32
 		}
 	}
 }

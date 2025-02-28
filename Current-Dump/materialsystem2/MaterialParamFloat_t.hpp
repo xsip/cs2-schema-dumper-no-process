@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace materialsystem2 {
 		namespace MaterialParamFloat_t {
-			 uintptr_t m_flValue = 0x8;
+			 uintptr_t m_flValue = 0x8; // float32
 		}
 	}
 }

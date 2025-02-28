@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace client {
 		namespace CDestructiblePartRuntimeDataVector {
-			 uintptr_t m_DestructiblePartsRuntimeData = 0x0;
+			 uintptr_t m_DestructiblePartsRuntimeData = 0x0; // CUtlVector< CDestructiblePartRuntimeData >
 		}
 	}
 }

@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace particles {
 		namespace CParticleFunctionEmitter {
-			 uintptr_t m_nEmitterIndex = 0x1c0;
+			 uintptr_t m_nEmitterIndex = 0x1c0; // int32
 		}
 	}
 }

@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace client {
 		namespace CPulseCell_Inflow_Yield {
-			 uintptr_t m_UnyieldResume = 0x48;
+			 uintptr_t m_UnyieldResume = 0x48; // CPulse_ResumePoint
 		}
 	}
 }

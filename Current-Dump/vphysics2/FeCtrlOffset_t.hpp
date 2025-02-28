@@ -4,9 +4,9 @@
 namespace xsip {
 	namespace vphysics2 {
 		namespace FeCtrlOffset_t {
-			 uintptr_t vOffset = 0x0;
-			 uintptr_t nCtrlParent = 0xc;
-			 uintptr_t nCtrlChild = 0xe;
+			 uintptr_t vOffset = 0x0; // Vector
+			 uintptr_t nCtrlParent = 0xc; // uint16
+			 uintptr_t nCtrlChild = 0xe; // uint16
 		}
 	}
 }

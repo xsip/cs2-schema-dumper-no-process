@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace materialsystem2 {
 		namespace MaterialParamVector_t {
-			 uintptr_t m_value = 0x8;
+			 uintptr_t m_value = 0x8; // Vector4D
 		}
 	}
 }

@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace meshsystem {
 		namespace CModelConfigElement_UserPick {
-			 uintptr_t m_Choices = 0x48;
+			 uintptr_t m_Choices = 0x48; // CUtlVector< CUtlString >
 		}
 	}
 }

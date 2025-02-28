@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace animationsystem {
 		namespace CNmBitFlags {
-			 uintptr_t m_flags = 0x0;
+			 uintptr_t m_flags = 0x0; // uint32
 		}
 	}
 }

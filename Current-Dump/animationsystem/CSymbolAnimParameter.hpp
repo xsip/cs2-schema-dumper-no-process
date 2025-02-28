@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace animationsystem {
 		namespace CSymbolAnimParameter {
-			 uintptr_t m_defaultValue = 0x80;
+			 uintptr_t m_defaultValue = 0x80; // CGlobalSymbol
 		}
 	}
 }

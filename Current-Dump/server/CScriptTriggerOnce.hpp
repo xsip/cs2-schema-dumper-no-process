@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CScriptTriggerOnce {
-			 uintptr_t m_vExtent = 0x988;
+			 uintptr_t m_vExtent = 0x988; // Vector
 		}
 	}
 }

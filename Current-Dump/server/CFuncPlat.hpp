@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CFuncPlat {
-			 uintptr_t m_sNoise = 0x838;
+			 uintptr_t m_sNoise = 0x838; // CUtlSymbolLarge
 		}
 	}
 }

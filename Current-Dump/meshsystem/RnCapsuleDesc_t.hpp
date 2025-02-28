@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace meshsystem {
 		namespace RnCapsuleDesc_t {
-			 uintptr_t m_Capsule = 0x18;
+			 uintptr_t m_Capsule = 0x18; // RnCapsule_t
 		}
 	}
 }

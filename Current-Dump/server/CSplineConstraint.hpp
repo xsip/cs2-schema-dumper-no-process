@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CSplineConstraint {
-			 uintptr_t m_vAnchorOffsetRestore = 0x5a0;
+			 uintptr_t m_vAnchorOffsetRestore = 0x5a0; // Vector
 		}
 	}
 }

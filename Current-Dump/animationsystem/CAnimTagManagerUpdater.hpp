@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace animationsystem {
 		namespace CAnimTagManagerUpdater {
-			 uintptr_t m_tags = 0x38;
+			 uintptr_t m_tags = 0x38; // CUtlVector< CSmartPtr< CAnimTagBase > >
 		}
 	}
 }

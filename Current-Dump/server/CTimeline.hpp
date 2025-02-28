@@ -4,13 +4,13 @@
 namespace xsip {
 	namespace server {
 		namespace CTimeline {
-			 uintptr_t m_flValues = 0x10;
-			 uintptr_t m_nValueCounts = 0x110;
-			 uintptr_t m_nBucketCount = 0x210;
-			 uintptr_t m_flInterval = 0x214;
-			 uintptr_t m_flFinalValue = 0x218;
-			 uintptr_t m_nCompressionType = 0x21c;
-			 uintptr_t m_bStopped = 0x220;
+			 uintptr_t m_flValues = 0x10; // float32[64]
+			 uintptr_t m_nValueCounts = 0x110; // int32[64]
+			 uintptr_t m_nBucketCount = 0x210; // int32
+			 uintptr_t m_flInterval = 0x214; // float32
+			 uintptr_t m_flFinalValue = 0x218; // float32
+			 uintptr_t m_nCompressionType = 0x21c; // TimelineCompression_t
+			 uintptr_t m_bStopped = 0x220; // bool
 		}
 	}
 }

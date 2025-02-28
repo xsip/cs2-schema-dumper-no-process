@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CFuncWall {
-			 uintptr_t m_nState = 0x790;
+			 uintptr_t m_nState = 0x790; // int32
 		}
 	}
 }

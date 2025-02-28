@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace animationsystem {
 		namespace CBoneVelocityMetricEvaluator {
-			 uintptr_t m_nBoneIndex = 0x50;
+			 uintptr_t m_nBoneIndex = 0x50; // int32
 		}
 	}
 }

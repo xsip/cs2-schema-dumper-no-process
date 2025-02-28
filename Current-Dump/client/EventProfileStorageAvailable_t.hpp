@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace client {
 		namespace EventProfileStorageAvailable_t {
-			 uintptr_t m_nSplitScreenSlot = 0x0;
+			 uintptr_t m_nSplitScreenSlot = 0x0; // CSplitScreenSlot
 		}
 	}
 }

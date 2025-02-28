@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace client {
 		namespace CFuncWater {
-			 uintptr_t m_BuoyancyHelper = 0xd28;
+			 uintptr_t m_BuoyancyHelper = 0xd28; // CBuoyancyHelper
 		}
 	}
 }

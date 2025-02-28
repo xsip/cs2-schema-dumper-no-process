@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace animationsystem {
 		namespace CAnimGraphNetworkSettings {
-			 uintptr_t m_bNetworkingEnabled = 0x20;
+			 uintptr_t m_bNetworkingEnabled = 0x20; // bool
 		}
 	}
 }

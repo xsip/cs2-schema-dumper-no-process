@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace animationsystem {
 		namespace CSequenceFinishedAnimTag {
-			 uintptr_t m_sequenceName = 0x58;
+			 uintptr_t m_sequenceName = 0x58; // CUtlString
 		}
 	}
 }

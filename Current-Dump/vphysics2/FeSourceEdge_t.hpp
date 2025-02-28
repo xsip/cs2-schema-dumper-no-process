@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace vphysics2 {
 		namespace FeSourceEdge_t {
-			 uintptr_t nNode = 0x0;
+			 uintptr_t nNode = 0x0; // uint16[2]
 		}
 	}
 }

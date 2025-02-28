@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CBaseDMStart {
-			 uintptr_t m_Master = 0x4e0;
+			 uintptr_t m_Master = 0x4e0; // CUtlSymbolLarge
 		}
 	}
 }

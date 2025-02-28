@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace animationsystem {
 		namespace CNmIKRig {
-			 uintptr_t m_skeleton = 0x0;
+			 uintptr_t m_skeleton = 0x0; // CStrongHandle< InfoForResourceTypeCNmSkeleton >
 		}
 	}
 }

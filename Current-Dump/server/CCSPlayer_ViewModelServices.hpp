@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CCSPlayer_ViewModelServices {
-			 uintptr_t m_hViewModel = 0x40;
+			 uintptr_t m_hViewModel = 0x40; // CHandle< CBaseViewModel >[3]
 		}
 	}
 }

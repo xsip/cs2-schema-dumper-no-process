@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CFilterModel {
-			 uintptr_t m_iFilterModel = 0x538;
+			 uintptr_t m_iFilterModel = 0x538; // CUtlSymbolLarge
 		}
 	}
 }

@@ -59,10 +59,14 @@ public:
 				currentClassFile << "\tnamespace " << dllToFolderName.c_str() << " {" << std::endl;
 				currentClassFile << "\t\tnamespace " << classData->m_szName << " {" << std::endl;
 				infoFile << "//\t" << classData->m_szName << " ( " << numFields << " properties )" << std::endl;
+				
 				// printf("\tClassDefinition: %s ( %i fields )\n", classData->m_szName, numFields);
 				for (int propertyIdx = 0; propertyIdx < numFields; propertyIdx++) {
-					currentClassFile << "\t\t\t uintptr_t " << classData->m_pFields[propertyIdx].m_szName << " = 0x" << std::hex << classData->m_pFields[propertyIdx].m_nOffset << ";" << std::endl;
-					// printf("\t\tField: %s | Offset: 0x%x\n", classData->m_pFields[propertyIdx].m_szName, classData->m_pFields[propertyIdx].m_nOffset);
+					currentClassFile << "\t\t\t uintptr_t " << classData->m_pFields[propertyIdx].m_szName << " = 0x" << std::hex << classData->m_pFields[propertyIdx].m_nOffset << "; // " << classData->m_pFields[propertyIdx].m_pType->m_szName << std::endl;
+					/*if (strstr(classData->m_szName, "BaseEntity")) {
+						printf("Metadata: 0x%p\n", &classData->m_pFields[propertyIdx]);
+						printf("\t\tField: %s | Offset: 0x%x | %s\n", classData->m_pFields[propertyIdx].m_szName, classData->m_pFields[propertyIdx].m_nOffset, classData->m_pFields[propertyIdx].m_pType->m_szName);
+					}*/
 				}
 				currentClassFile << "\t\t}" << std::endl;
 				currentClassFile << "\t}" << std::endl;

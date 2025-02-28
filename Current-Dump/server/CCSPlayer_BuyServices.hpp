@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CCSPlayer_BuyServices {
-			 uintptr_t m_vecSellbackPurchaseEntries = 0xc8;
+			 uintptr_t m_vecSellbackPurchaseEntries = 0xc8; // CUtlVectorEmbeddedNetworkVar< SellbackPurchaseEntry_t >
 		}
 	}
 }

@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CScriptItem {
-			 uintptr_t m_MoveTypeOverride = 0xa80;
+			 uintptr_t m_MoveTypeOverride = 0xa80; // MoveType_t
 		}
 	}
 }

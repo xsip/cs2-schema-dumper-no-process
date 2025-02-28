@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace animationsystem {
 		namespace CAnimScriptComponentUpdater {
-			 uintptr_t m_hScript = 0x30;
+			 uintptr_t m_hScript = 0x30; // AnimScriptHandle
 		}
 	}
 }

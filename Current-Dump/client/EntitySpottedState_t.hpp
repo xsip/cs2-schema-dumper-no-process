@@ -4,8 +4,8 @@
 namespace xsip {
 	namespace client {
 		namespace EntitySpottedState_t {
-			 uintptr_t m_bSpotted = 0x8;
-			 uintptr_t m_bSpottedByMask = 0xc;
+			 uintptr_t m_bSpotted = 0x8; // bool
+			 uintptr_t m_bSpottedByMask = 0xc; // uint32[2]
 		}
 	}
 }

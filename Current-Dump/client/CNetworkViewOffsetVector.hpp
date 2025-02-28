@@ -4,9 +4,9 @@
 namespace xsip {
 	namespace client {
 		namespace CNetworkViewOffsetVector {
-			 uintptr_t m_vecX = 0x10;
-			 uintptr_t m_vecY = 0x18;
-			 uintptr_t m_vecZ = 0x20;
+			 uintptr_t m_vecX = 0x10; // CNetworkedQuantizedFloat
+			 uintptr_t m_vecY = 0x18; // CNetworkedQuantizedFloat
+			 uintptr_t m_vecZ = 0x20; // CNetworkedQuantizedFloat
 		}
 	}
 }

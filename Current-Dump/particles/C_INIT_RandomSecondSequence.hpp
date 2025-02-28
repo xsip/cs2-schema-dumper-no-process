@@ -4,8 +4,8 @@
 namespace xsip {
 	namespace particles {
 		namespace C_INIT_RandomSecondSequence {
-			 uintptr_t m_nSequenceMin = 0x1c8;
-			 uintptr_t m_nSequenceMax = 0x1cc;
+			 uintptr_t m_nSequenceMin = 0x1c8; // int32
+			 uintptr_t m_nSequenceMax = 0x1cc; // int32
 		}
 	}
 }

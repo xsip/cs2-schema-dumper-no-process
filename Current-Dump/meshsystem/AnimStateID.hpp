@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace meshsystem {
 		namespace AnimStateID {
-			 uintptr_t m_id = 0x0;
+			 uintptr_t m_id = 0x0; // uint32
 		}
 	}
 }

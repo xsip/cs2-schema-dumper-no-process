@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace meshsystem {
 		namespace CModelConfigElement_SetMaterialGroupOnAttachedModels {
-			 uintptr_t m_MaterialGroupName = 0x48;
+			 uintptr_t m_MaterialGroupName = 0x48; // CUtlString
 		}
 	}
 }

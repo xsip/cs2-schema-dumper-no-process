@@ -9,11 +9,18 @@
 
 namespace SDK
 {
+
+	class CSchemaFieldType {
+	public:
+		S2_PAD(0x8);
+		const char* m_szName;
+	};
+
 	class CSchemaField
 	{
 	public:
 		const char* m_szName;
-		void* m_pType;
+		CSchemaFieldType *m_pType;
 		uint32_t m_nOffset;
 		uint32_t m_nMetadataSize;
 		void* m_nMetadata;

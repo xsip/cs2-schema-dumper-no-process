@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CEnvEntityIgniter {
-			 uintptr_t m_flLifetime = 0x4e0;
+			 uintptr_t m_flLifetime = 0x4e0; // float32
 		}
 	}
 }

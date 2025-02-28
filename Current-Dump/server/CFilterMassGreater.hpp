@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CFilterMassGreater {
-			 uintptr_t m_fFilterMass = 0x538;
+			 uintptr_t m_fFilterMass = 0x538; // float32
 		}
 	}
 }

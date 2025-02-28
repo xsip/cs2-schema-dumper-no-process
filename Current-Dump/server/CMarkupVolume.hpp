@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CMarkupVolume {
-			 uintptr_t m_bDisabled = 0x790;
+			 uintptr_t m_bDisabled = 0x790; // bool
 		}
 	}
 }

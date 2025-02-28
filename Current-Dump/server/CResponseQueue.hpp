@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CResponseQueue {
-			 uintptr_t m_ExpresserTargets = 0x48;
+			 uintptr_t m_ExpresserTargets = 0x48; // CUtlVector< CAI_Expresser* >
 		}
 	}
 }

@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CRulePointEntity {
-			 uintptr_t m_Score = 0x798;
+			 uintptr_t m_Score = 0x798; // int32
 		}
 	}
 }

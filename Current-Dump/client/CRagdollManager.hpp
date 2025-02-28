@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace client {
 		namespace CRagdollManager {
-			 uintptr_t m_iCurrentMaxRagdollCount = 0x568;
+			 uintptr_t m_iCurrentMaxRagdollCount = 0x568; // int8
 		}
 	}
 }

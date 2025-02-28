@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace animationsystem {
 		namespace CDampedValueComponentUpdater {
-			 uintptr_t m_items = 0x30;
+			 uintptr_t m_items = 0x30; // CUtlVector< CDampedValueUpdateItem >
 		}
 	}
 }

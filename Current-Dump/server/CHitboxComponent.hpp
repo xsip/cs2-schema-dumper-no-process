@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CHitboxComponent {
-			 uintptr_t m_bvDisabledHitGroups = 0x24;
+			 uintptr_t m_bvDisabledHitGroups = 0x24; // uint32[1]
 		}
 	}
 }

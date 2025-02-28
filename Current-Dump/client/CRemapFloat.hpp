@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace client {
 		namespace CRemapFloat {
-			 uintptr_t m_pValue = 0x0;
+			 uintptr_t m_pValue = 0x0; // float32[4]
 		}
 	}
 }

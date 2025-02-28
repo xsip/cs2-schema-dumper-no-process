@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace server {
 		namespace CFilterClass {
-			 uintptr_t m_iFilterClass = 0x538;
+			 uintptr_t m_iFilterClass = 0x538; // CUtlSymbolLarge
 		}
 	}
 }

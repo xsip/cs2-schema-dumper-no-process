@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace animationsystem {
 		namespace JiggleBoneSettingsList_t {
-			 uintptr_t m_boneSettings = 0x0;
+			 uintptr_t m_boneSettings = 0x0; // CUtlVector< JiggleBoneSettings_t >
 		}
 	}
 }

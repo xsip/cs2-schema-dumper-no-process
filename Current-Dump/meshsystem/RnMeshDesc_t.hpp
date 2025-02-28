@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace meshsystem {
 		namespace RnMeshDesc_t {
-			 uintptr_t m_Mesh = 0x18;
+			 uintptr_t m_Mesh = 0x18; // RnMesh_t
 		}
 	}
 }

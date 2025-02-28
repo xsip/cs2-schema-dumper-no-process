@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace particles {
 		namespace C_INIT_SequenceLifeTime {
-			 uintptr_t m_flFramerate = 0x1c8;
+			 uintptr_t m_flFramerate = 0x1c8; // float32
 		}
 	}
 }

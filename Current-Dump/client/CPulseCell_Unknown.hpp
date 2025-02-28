@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace client {
 		namespace CPulseCell_Unknown {
-			 uintptr_t m_UnknownKeys = 0x48;
+			 uintptr_t m_UnknownKeys = 0x48; // KeyValues3
 		}
 	}
 }

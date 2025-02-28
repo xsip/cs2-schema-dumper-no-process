@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace animationsystem {
 		namespace CNmFrameSnapEvent {
-			 uintptr_t m_frameSnapMode = 0x18;
+			 uintptr_t m_frameSnapMode = 0x18; // NmFrameSnapEventMode_t
 		}
 	}
 }

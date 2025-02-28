@@ -4,8 +4,8 @@
 namespace xsip {
 	namespace server {
 		namespace CTriggerVolume {
-			 uintptr_t m_iFilterName = 0x790;
-			 uintptr_t m_hFilter = 0x798;
+			 uintptr_t m_iFilterName = 0x790; // CUtlSymbolLarge
+			 uintptr_t m_hFilter = 0x798; // CHandle< CBaseFilter >
 		}
 	}
 }

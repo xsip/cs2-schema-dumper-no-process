@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace host {
 		namespace CAnimScriptBase {
-			 uintptr_t m_bIsValid = 0x8;
+			 uintptr_t m_bIsValid = 0x8; // bool
 		}
 	}
 }

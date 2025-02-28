@@ -4,7 +4,7 @@
 namespace xsip {
 	namespace vphysics2 {
 		namespace CFeVertexMapBuildArray {
-			 uintptr_t m_Array = 0x0;
+			 uintptr_t m_Array = 0x0; // CUtlVector< FeVertexMapBuild_t* >
 		}
 	}
 }

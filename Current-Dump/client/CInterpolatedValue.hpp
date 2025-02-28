@@ -4,11 +4,11 @@
 namespace xsip {
 	namespace client {
 		namespace CInterpolatedValue {
-			 uintptr_t m_flStartTime = 0x0;
-			 uintptr_t m_flEndTime = 0x4;
-			 uintptr_t m_flStartValue = 0x8;
-			 uintptr_t m_flEndValue = 0xc;
-			 uintptr_t m_nInterpType = 0x10;
+			 uintptr_t m_flStartTime = 0x0; // float32
+			 uintptr_t m_flEndTime = 0x4; // float32
+			 uintptr_t m_flStartValue = 0x8; // float32
+			 uintptr_t m_flEndValue = 0xc; // float32
+			 uintptr_t m_nInterpType = 0x10; // int32
 		}
 	}
 }
