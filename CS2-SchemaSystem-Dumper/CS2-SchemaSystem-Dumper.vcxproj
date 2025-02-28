@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Memory.cpp" />
     <ClCompile Include="SchemaLoadingHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -168,7 +169,7 @@
     <ClInclude Include="loaders\VScriptSchemaLoader.hpp" />
     <ClInclude Include="loaders\WorldRendererSchemaLoader.hpp" />
     <ClInclude Include="SchemaLoadingHandler.hpp" />
-    <ClInclude Include="memory.h" />
+    <ClInclude Include="Memory.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,7 +2,7 @@
 #include "BaseLoader.hpp"
 
 
- bool SchemaLoadingHandler::InstallSchemaBindings(const char* dllName) {
+ bool SchemaLoadingHandler::InstallSchemaBindings(const char* dllName, const char* schema) {
 
 	if (SchemaLoadingHandler::installedSchemaBindings[dllName]) {
 		printf("Ignoring %s\n", dllName);
@@ -31,13 +31,13 @@
 
 	SchemaLoadingHandler::_InstallSchemaBindings installBindingsFn = (SchemaLoadingHandler::_InstallSchemaBindings)GetProcAddress(foundDll, "InstallSchemaBindings");
 
-	auto res = installBindingsFn("SchemaSystem_001", SchemaLoadingHandler::pSchemaSystem);
+	auto res = installBindingsFn(schema, SchemaLoadingHandler::pSchemaSystem);
 
 	if (res != 0x00000000C0000001) {
-		printf("Couldn't install schemaBindings for %s!\n", dllName);
+		printf("Couldn't install %s schemaBindings for %s! | 0x%p\n", schema, dllName, res);
 		return false;
 	}
-	printf("Installed Bindings for %s\n", dllName);
+	printf("Installed %s Bindings for %s\n", schema, dllName);
 	SchemaLoadingHandler::installedSchemaBindings.insert({ dllName, true });
 
 	return true;

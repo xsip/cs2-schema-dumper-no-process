@@ -55,7 +55,7 @@ public:
 
 		for (const auto loader : GlobalLoader::loaderList) {
 			if (!loader->InstallBindings()) {
-				printf("Coudln't initialize %s Loader!\n", loader->GetModuleNameFromPath()->c_str());
+				printf("Coudln't install bindings for %s Loader!\n", loader->GetModuleNameFromPath()->c_str());
 				return false;
 			}
 		}

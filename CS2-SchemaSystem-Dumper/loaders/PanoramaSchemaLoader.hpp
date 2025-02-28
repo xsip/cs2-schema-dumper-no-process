@@ -6,12 +6,6 @@ class PanoramaSchemaLoader : public BaseLoader {
 public:
 	PanoramaSchemaLoader() :
 		BaseLoader() {
-		mainDll = "";
-		dllsLoaded = false;
-		bindingsInstalled = false;
-	}
-
-	inline bool Initialize() {
 
 		dllsToLoad = {
 			"game\\bin\\win64\\SDL3.dll",
@@ -33,8 +27,12 @@ public:
 			"game\\bin\\win64\\libswscale-5.dll",
 			"game\\bin\\win64\\video64.dll",
 		};
+
 		mainDll = "game\\bin\\win64\\panorama.dll";
 
+	}
+
+	inline bool Initialize() {
 		return BaseLoader::_Initialize();
 	}
 

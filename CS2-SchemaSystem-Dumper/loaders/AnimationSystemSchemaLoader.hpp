@@ -4,19 +4,16 @@
 class AnimationSystemSchemaLoader : public BaseLoader {
 
 public:
-	AnimationSystemSchemaLoader() :
-		BaseLoader() {
-		mainDll = "";
-		dllsLoaded = false;
-		bindingsInstalled = false;
-	}
-
-	inline bool Initialize() {
+	AnimationSystemSchemaLoader() : BaseLoader() {
 		dllsToLoad = {
 			"game\\bin\\win64\\tier0.dll"
 		};
+		
 		mainDll = "game\\bin\\win64\\animationsystem.dll";
 
+	}
+
+	inline bool Initialize() {
 		return BaseLoader::_Initialize();
 	}
 

@@ -27,9 +27,12 @@
     <ClCompile Include="SchemaLoadingHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Memory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="memory.h">
+    <ClInclude Include="Memory.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CSchemaSystem.h">
@@ -37,9 +40,6 @@
     </ClInclude>
     <ClInclude Include="SchemaLoadingHandler.hpp">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GlobalLoader.hpp">
-      <Filter>Header Files\Loaders</Filter>
     </ClInclude>
     <ClInclude Include="BaseLoader.hpp">
       <Filter>Header Files\Loaders\Abstract</Filter>
@@ -130,6 +130,9 @@
     </ClInclude>
     <ClInclude Include="loaders\WorldRendererSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalLoader.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

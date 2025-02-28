@@ -6,12 +6,6 @@ class PulseSystemSchemaLoader : public BaseLoader {
 public:
 	PulseSystemSchemaLoader() :
 		BaseLoader() {
-		mainDll = "";
-		dllsLoaded = false;
-		bindingsInstalled = false;
-	}
-
-	inline bool Initialize() {
 
 		dllsToLoad = {
 			"game\\bin\\win64\\tier0.dll",
@@ -24,8 +18,12 @@ public:
 			"game\\bin\\win64\\v8_zlib.dll",
 			"game\\bin\\win64\\v8.dll", // actual v8
 		};
+
 		mainDll = "game\\bin\\win64\\pulse_system.dll";
 
+	}
+
+	inline bool Initialize() {
 		return BaseLoader::_Initialize();
 	}
 

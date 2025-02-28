@@ -6,12 +6,6 @@ class ClientSchemaLoader : public BaseLoader {
 public:
 	ClientSchemaLoader():
 	BaseLoader() {
-		mainDll = "";
-		dllsLoaded = false;
-		bindingsInstalled = false;
-	}
-
-	inline bool Initialize() {
 
 		dllsToLoad = {
 			"game\\bin\\win64\\embree3.dll",
@@ -31,8 +25,11 @@ public:
 			"game\\bin\\win64\\libswscale-5.dll",
 			"game\\bin\\win64\\video64.dll",
 		};
-		mainDll = "game\\csgo\\bin\\win64\\client.dll";
 
+		mainDll = "game\\csgo\\bin\\win64\\client.dll";
+	}
+
+	inline bool Initialize() {
 		return BaseLoader::_Initialize();
 	}
 

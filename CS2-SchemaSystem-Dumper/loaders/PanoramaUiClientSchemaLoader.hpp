@@ -6,12 +6,6 @@ class PanoramaUiClientSchemaLoader : public BaseLoader {
 public:
 	PanoramaUiClientSchemaLoader() :
 		BaseLoader() {
-		mainDll = "";
-		dllsLoaded = false;
-		bindingsInstalled = false;
-	}
-
-	inline bool Initialize() {
 
 		dllsToLoad = {
 			"game\\bin\\win64\\steam_api64.dll",
@@ -31,8 +25,12 @@ public:
 			"game\\bin\\win64\\libswscale-5.dll",
 			"game\\bin\\win64\\video64.dll",
 		};
+
 		mainDll = "game\\bin\\win64\\panoramauiclient.dll";
 
+	}
+
+	inline bool Initialize() {
 		return BaseLoader::_Initialize();
 	}
 

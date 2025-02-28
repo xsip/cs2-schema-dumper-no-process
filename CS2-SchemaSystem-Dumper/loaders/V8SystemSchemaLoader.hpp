@@ -6,12 +6,6 @@ class V8SystemSchemaLoader : public BaseLoader {
 public:
 	V8SystemSchemaLoader() :
 		BaseLoader() {
-		mainDll = "";
-		dllsLoaded = false;
-		bindingsInstalled = false;
-	}
-
-	inline bool Initialize() {
 
 		dllsToLoad = {
 			"game\\bin\\win64\\steam_api64.dll",
@@ -26,8 +20,11 @@ public:
 			"game\\bin\\win64\\v8_libplatform.dll",
 
 		};
-		mainDll = "game\\bin\\win64\\v8system.dll";
 
+		mainDll = "game\\bin\\win64\\v8system.dll";
+	}
+
+	inline bool Initialize() {
 		return BaseLoader::_Initialize();
 	}
 

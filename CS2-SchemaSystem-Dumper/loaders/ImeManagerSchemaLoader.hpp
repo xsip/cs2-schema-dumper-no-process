@@ -4,20 +4,17 @@
 class ImeManagerSchemaLoader: public  BaseLoader {
 
 public:
-	ImeManagerSchemaLoader() :
-		BaseLoader() {
-		mainDll = "";
-		dllsLoaded = false;
-		bindingsInstalled = false;
-	}
-
-	inline bool Initialize() {
+	ImeManagerSchemaLoader() : BaseLoader() {
 
 		dllsToLoad = {
 			"game\\bin\\win64\\tier0.dll"
 		};
+	
 		mainDll = "game\\bin\\win64\\imemanager.dll";
+	
+	}
 
+	inline bool Initialize() {
 		return BaseLoader::_Initialize();
 	}
 

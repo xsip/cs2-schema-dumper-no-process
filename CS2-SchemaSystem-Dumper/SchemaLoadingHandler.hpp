@@ -65,7 +65,7 @@ public:
 		return createInterface;
 	}
 
-	static bool InstallSchemaBindings(const char* dllName);
+	static bool InstallSchemaBindings(const char* dllName, const char* schema = "SchemaSystem_001");
 	static bool LoadNeededDlls(std::vector<const char*> dependencyDlls, const char* mainDll);
 	
 };

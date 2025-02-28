@@ -9,7 +9,11 @@ protected:
 	bool bindingsInstalled;
     std::vector<const char*> dllsToLoad;
 protected:
-    BaseLoader() {};
+    BaseLoader() {
+        mainDll = "";
+        dllsLoaded = false;
+        bindingsInstalled = false;
+    };
 public:
     inline static const char* basePath = "D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\";
     virtual inline bool Initialize() = 0;
@@ -27,7 +31,7 @@ protected:
 
         if (bindingsInstalled)
             return true;
-        
+
         return bindingsInstalled = SchemaLoadingHandler::InstallSchemaBindings(mainDll);
 
     }
