@@ -138,7 +138,6 @@
     <ClInclude Include="GlobalLoader.hpp" />
     <ClInclude Include="BaseLoader.hpp" />
     <ClInclude Include="CSchemaSystem.h" />
-    <ClInclude Include="GenericLoader.hpp" />
     <ClInclude Include="loaders\AnimationSystemSchemaLoader.hpp" />
     <ClInclude Include="loaders\ClientSchemaLoader.hpp" />
     <ClInclude Include="loaders\Engine2SchemaLoader.hpp" />

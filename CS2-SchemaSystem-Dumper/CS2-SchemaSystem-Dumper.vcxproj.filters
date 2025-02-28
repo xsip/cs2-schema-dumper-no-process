@@ -41,9 +41,6 @@
     <ClInclude Include="GlobalLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="GenericLoader.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="BaseLoader.hpp">
       <Filter>Header Files\Loaders\Abstract</Filter>
     </ClInclude>
