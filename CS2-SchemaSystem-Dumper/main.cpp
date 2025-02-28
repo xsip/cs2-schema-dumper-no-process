@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
 	pLogger->Log("Found %i modules in SchemaSystem.\n\n", CGlobalLoader::GetSchemaSystem()->m_nScopeSize);
 	pLogger->Log("m_iHealth: 0x%x\n", CSchemaManager::GetModule("client")->GetClass("C_BaseEntity")->GetField("m_iHealth")->GetOffset());
 	// CTypedSchemaManagerGenerator::CreateEnums("C:\\schema-manager");
-	// CSchemaDumper::DumpToFS("C:\\Current-Dump");
+	CSchemaDumper::DumpToFS("C:\\Current-Dump");
 
 	while (true) {
 		Sleep(50000000);
