@@ -17,4 +17,13 @@ public:
 	{
 		return reinterpret_cast<uintptr_t> (reinterpret_cast<void***>(pThis)[0][index]);
 	}
+
+	inline static void**& getvtable(void* inst, size_t offset = 0)
+	{
+		return *reinterpret_cast<void***>((size_t)inst + offset);
+	}
+	inline static  const void** getvtable(const void* inst, size_t offset = 0)
+	{
+		return *reinterpret_cast<const void***>((size_t)inst + offset);
+	}
 };

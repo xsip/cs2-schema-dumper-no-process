@@ -1,0 +1,8 @@
+#include "schema-class/CSchemaClass.hpp"
+#include "schema-class/CSchemaDeclaredClass.hpp"
+#include "schema-class/CSchemaDeclaredClassEntry.hpp"
+#include "schema-class/CSchemaDeclaredEnum.hpp"
+#include "schema-class/CSchemaField.hpp"
+#include "schema-class/CSchemaFieldType.hpp"
+#include "schema-class/CSchemaSystem.h"
+#include "schema-class/CSchemaSystemTypeScope.hpp"

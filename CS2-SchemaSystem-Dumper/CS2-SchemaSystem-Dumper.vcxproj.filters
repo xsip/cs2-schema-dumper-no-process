@@ -19,6 +19,18 @@
     <Filter Include="Header Files\Loaders\Abstract">
       <UniqueIdentifier>{52cfb179-d962-43ea-9406-7192a65010af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\SchemaSystem">
+      <UniqueIdentifier>{a61e5e63-a41c-4799-a83a-54878073946f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Memory">
+      <UniqueIdentifier>{6aef9a8b-7721-40ed-b0d3-f8b66cab58cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Memory">
+      <UniqueIdentifier>{b6bdb8f6-d1b2-44a5-bf52-861c6ebdb267}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SchemaManager">
+      <UniqueIdentifier>{bc6f728a-1943-4486-bebc-48ebd6046bde}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -30,12 +42,12 @@
     <ClCompile Include="Memory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="memory\PtrCheck.cpp">
+      <Filter>Source Files\Memory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Memory.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CSchemaSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SchemaLoadingHandler.hpp">
@@ -136,6 +148,51 @@
     </ClInclude>
     <ClInclude Include="CSchemaDumper.hpp">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSchemaInclude.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\PtrCheck.h">
+      <Filter>Header Files\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="schema-class\CSchemaClass.hpp">
+      <Filter>Header Files\SchemaSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="schema-class\CSchemaDeclaredClass.hpp">
+      <Filter>Header Files\SchemaSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="schema-class\CSchemaDeclaredClassEntry.hpp">
+      <Filter>Header Files\SchemaSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="schema-class\CSchemaDeclaredEnum.hpp">
+      <Filter>Header Files\SchemaSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="schema-class\CSchemaFieldType.hpp">
+      <Filter>Header Files\SchemaSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="schema-class\CSchemaField.hpp">
+      <Filter>Header Files\SchemaSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="schema-class\CSchemaHelper.hpp">
+      <Filter>Header Files\SchemaSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="schema-class\CSchemaSystem.h">
+      <Filter>Header Files\SchemaSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="schema-class\CSchemaSystemTypeScope.hpp">
+      <Filter>Header Files\SchemaSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="schama-manager\CSchemaManager.hpp">
+      <Filter>Header Files\SchemaManager</Filter>
+    </ClInclude>
+    <ClInclude Include="schama-manager\CSchemaManagerClass.hpp">
+      <Filter>Header Files\SchemaManager</Filter>
+    </ClInclude>
+    <ClInclude Include="schama-manager\CSchemaManagerField.hpp">
+      <Filter>Header Files\SchemaManager</Filter>
+    </ClInclude>
+    <ClInclude Include="schama-manager\CSchemaManagerModule.hpp">
+      <Filter>Header Files\SchemaManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

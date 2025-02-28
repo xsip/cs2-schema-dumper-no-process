@@ -133,13 +133,14 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Memory.cpp" />
+    <ClCompile Include="memory\PtrCheck.cpp" />
     <ClCompile Include="SchemaLoadingHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CSchemaDumper.hpp" />
+    <ClInclude Include="CSchemaInclude.hpp" />
     <ClInclude Include="GlobalLoader.hpp" />
     <ClInclude Include="BaseLoader.hpp" />
-    <ClInclude Include="CSchemaSystem.h" />
     <ClInclude Include="loaders\AnimationSystemSchemaLoader.hpp" />
     <ClInclude Include="loaders\ClientSchemaLoader.hpp" />
     <ClInclude Include="loaders\Engine2SchemaLoader.hpp" />
@@ -169,6 +170,20 @@
     <ClInclude Include="loaders\VPhysics2SchemaLoader.hpp" />
     <ClInclude Include="loaders\VScriptSchemaLoader.hpp" />
     <ClInclude Include="loaders\WorldRendererSchemaLoader.hpp" />
+    <ClInclude Include="memory\PtrCheck.h" />
+    <ClInclude Include="schama-manager\CSchemaManager.hpp" />
+    <ClInclude Include="schama-manager\CSchemaManagerClass.hpp" />
+    <ClInclude Include="schama-manager\CSchemaManagerField.hpp" />
+    <ClInclude Include="schama-manager\CSchemaManagerModule.hpp" />
+    <ClInclude Include="schema-class\CSchemaClass.hpp" />
+    <ClInclude Include="schema-class\CSchemaDeclaredClass.hpp" />
+    <ClInclude Include="schema-class\CSchemaDeclaredClassEntry.hpp" />
+    <ClInclude Include="schema-class\CSchemaDeclaredEnum.hpp" />
+    <ClInclude Include="schema-class\CSchemaFieldType.hpp" />
+    <ClInclude Include="schema-class\CSchemaField.hpp" />
+    <ClInclude Include="schema-class\CSchemaHelper.hpp" />
+    <ClInclude Include="schema-class\CSchemaSystem.h" />
+    <ClInclude Include="schema-class\CSchemaSystemTypeScope.hpp" />
     <ClInclude Include="SchemaLoadingHandler.hpp" />
     <ClInclude Include="Memory.hpp" />
   </ItemGroup>

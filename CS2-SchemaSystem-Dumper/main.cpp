@@ -8,9 +8,10 @@
 #include <vector>
 
 #include "memory.h"
-#include "CSchemaSystem.h"
+#include "CSchemaInclude.hpp"
 #include "GlobalLoader.hpp"
 #include "CSchemaDumper.hpp"
+#include "schama-manager/CSchemaManager.hpp"
 
 int main(int argc, char* argv[]) {
 	// g_Memory.Initialize("cs2.exe");
@@ -20,6 +21,7 @@ int main(int argc, char* argv[]) {
 	printf("m_pDeclaredClasses: 0x%x\n", offsetof(SDK::CSchemaSystemTypeScope, m_pDeclaredClasses));
 	printf("m_nNumDeclaredClasses: 0x%x\n", offsetof(SDK::CSchemaSystemTypeScope, m_nNumDeclaredClasses));
 	printf("m_pEnumBindings: 0x%x\n", offsetof(SDK::CSchemaSystemTypeScope, m_pEnumBindings)); // m_nNumDeclaredClasses: 0x456
+
 	if (!GlobalLoader::Initialize()) {
 		printf("Error initializing!!\n");
 		while (true) {
@@ -32,8 +34,10 @@ int main(int argc, char* argv[]) {
 			Sleep(50000000);
 		}
 	}
+	GlobalLoader::GetSchemaSystem()->LogSchemaSystemInfo();
 
-	CSchemaDumper::DumpToFS("C:\\Current-Dump");
+	// printf("m_iHealth: 0x%x\n", CSchemaManager::GetModule("client")->GetClass("C_BaseEntity")->GetField("m_iHealth")->GetOffset());
+	// CSchemaDumper::DumpToFS("C:\\Current-Dump");
 
 	while (true) {
 		Sleep(50000000);

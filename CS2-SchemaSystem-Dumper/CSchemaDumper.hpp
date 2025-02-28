@@ -2,8 +2,10 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "CSchemaSystem.h"
+#include "CSchemaInclude.hpp"
+
 #include "GlobalLoader.hpp"
+#include "memory/PtrCheck.h"
 
 class CSchemaDumper {
 public:
@@ -17,10 +19,10 @@ public:
 		std::ofstream sdkFile;
 		auto sdkFilePath = outputPathStr + std::string("\\SDK.hpp");
 
-		sdkFile.open(sdkFilePath.c_str());
 
+		sdkFile.open(sdkFilePath.c_str());
 		for (int scopeIdx = 0; scopeIdx < pSchemaSystem->m_nScopeSize; scopeIdx++) {
-			auto currentScope = pSchemaSystem->m_pScopeArray[scopeIdx];
+			auto currentScope = pSchemaSystem->GetScopeEntry(scopeIdx);
 			std::ofstream infoFile;
 			std::ofstream simpleSdkFile;
 			auto scopeStr = std::string(currentScope->m_szName);
@@ -35,12 +37,26 @@ public:
 				return;
 			}
 			infoFile.open((scopePath + "\\" + "info.txt").c_str());
+			std::ofstream enumFile;
+			enumFile.open((scopePath + "\\" + scopePath +"-enums.txt").c_str());
 			infoFile << "// Current Scope: " << currentScope->m_szName << std::endl;
 			infoFile << "// Number of Classes In Scope: " << currentScope->m_nNumDeclaredClasses << std::endl << std::endl;
 			infoFile << "// Classes: " << std::endl;
 
-			if (currentScope->m_pEnumBindings) {
+			if (currentScope->m_pEnumBindings && strstr(currentScope->m_szName, "client.dll")) {
 				printf("Class: 0x%p ( %s ) | %i\n", &pSchemaSystem->m_pScopeArray[scopeIdx], currentScope->m_szName, currentScope->m_nNumDeclaredClasses);
+				int currBinding = 0;
+				auto pEnumBinding = currentScope->GetEnumBinding(0);
+				while (!PtrCheck::PtrIsInvalid((uintptr_t)&pEnumBinding)) {
+					if (PtrCheck::PtrIsInvalid((uintptr_t)(pEnumBinding->m_szName)))
+						break;
+					printf("Enum: %s\n", pEnumBinding->m_szName);
+					enumFile << "// " << pEnumBinding->m_szName << "  " << std::endl;
+					currBinding++;
+					pEnumBinding = currentScope->GetEnumBinding(currBinding);
+					if (PtrCheck::PtrIsInvalid((uintptr_t)(pEnumBinding)))
+						break;
+				}
 			}
 			
 			if (currentScope->m_nNumDeclaredClasses == 65535)
@@ -85,6 +101,7 @@ public:
 			infoFile << std::endl;
 			infoFile.close();
 			simpleSdkFile.close();
+			enumFile.close();
 		}
 		sdkFile.close();
 	}

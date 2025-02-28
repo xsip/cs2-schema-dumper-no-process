@@ -9,8 +9,7 @@
 #include <vector>
 #include <map>
 
-#include "CSchemaSystem.h"
-
+#include "CSchemaInclude.hpp"
 
 class SchemaLoadingHandler {
 private:
