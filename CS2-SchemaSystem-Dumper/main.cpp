@@ -12,6 +12,7 @@
 #include "GlobalLoader.hpp"
 #include "CSchemaDumper.hpp"
 #include "schama-manager/CSchemaManager.hpp"
+#include "schama-manager/CTypedSchemManagerGenerator.hpp"
 
 int main(int argc, char* argv[]) {
 	// g_Memory.Initialize("cs2.exe");
@@ -36,7 +37,8 @@ int main(int argc, char* argv[]) {
 	}
 	GlobalLoader::GetSchemaSystem()->LogSchemaSystemInfo();
 
-	// printf("m_iHealth: 0x%x\n", CSchemaManager::GetModule("client")->GetClass("C_BaseEntity")->GetField("m_iHealth")->GetOffset());
+	printf("m_iHealth: 0x%x\n", CSchemaManager::GetModule("client")->GetClass("C_BaseEntity")->GetField("m_iHealth")->GetOffset());
+	// CTypedSchemaManagerGenerator::CreateEnums("C:\\schema-manager");
 	// CSchemaDumper::DumpToFS("C:\\Current-Dump");
 
 	while (true) {

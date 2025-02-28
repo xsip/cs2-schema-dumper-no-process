@@ -3,6 +3,7 @@
 #include <map>
 #include <string>
 #include "CSchemaManagerModule.hpp"
+
 class CSchemaManager {
 private:
 	inline static bool initialized = false;

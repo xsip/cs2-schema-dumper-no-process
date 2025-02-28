@@ -175,6 +175,7 @@
     <ClInclude Include="schama-manager\CSchemaManagerClass.hpp" />
     <ClInclude Include="schama-manager\CSchemaManagerField.hpp" />
     <ClInclude Include="schama-manager\CSchemaManagerModule.hpp" />
+    <ClInclude Include="schama-manager\CTypedSchemManagerGenerator.hpp" />
     <ClInclude Include="schema-class\CSchemaClass.hpp" />
     <ClInclude Include="schema-class\CSchemaDeclaredClass.hpp" />
     <ClInclude Include="schema-class\CSchemaDeclaredClassEntry.hpp" />
