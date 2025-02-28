@@ -1,0 +1,5 @@
+#include "pulse_system/CPulseCursorFuncs.hpp"
+#include "pulse_system/CPulseCell_WaitForCursorsWithTagBase::CursorState_t.hpp"
+#include "pulse_system/CPulseTestFuncs_LibraryA.hpp"
+#include "pulse_system/CPulseCell_WaitForCursorsWithTagBase.hpp"
+#include "pulse_system/CPulseCell_WaitForCursorsWithTag.hpp"

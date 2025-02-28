@@ -14,12 +14,21 @@ public:
 			printf("Couldn't create output path ( %s )!\n", outputPath);
 			return;
 		}
+		std::ofstream sdkFile;
+		auto sdkFilePath = outputPathStr + std::string("\\SDK.hpp");
+
+		sdkFile.open(sdkFilePath.c_str());
 
 		for (int scopeIdx = 0; scopeIdx < pSchemaSystem->m_nScopeSize; scopeIdx++) {
 			auto currentScope = pSchemaSystem->m_pScopeArray[scopeIdx];
 			std::ofstream infoFile;
+			std::ofstream simpleSdkFile;
 			auto scopeStr = std::string(currentScope->m_szName);
+
 			auto dllToFolderName = scopeStr.substr(0,scopeStr.find(".dll"));
+
+			simpleSdkFile.open(outputPathStr + "\\" + dllToFolderName + ".hpp");
+
 			auto scopePath = (std::string(outputPath) + "\\" + dllToFolderName);
 			if (!CSchemaDumper::CreateDir(scopePath.c_str())) {
 				printf("Couldn't create output path ( %s )!\n", scopePath.c_str());
@@ -34,7 +43,8 @@ public:
 			if (currentScope->m_nNumDeclaredClasses == 65535)
 				continue;
 
-			
+			sdkFile << "#include \"" << dllToFolderName.c_str() << ".hpp\"" << std::endl;
+
 			for (int classIdx = 0; classIdx < currentScope->m_nNumDeclaredClasses; classIdx++) {
 				auto currentClassDef = currentScope->m_pDeclaredClasses[classIdx];
 				auto classData = currentClassDef.m_pDeclaredClass->m_Class;
@@ -57,13 +67,15 @@ public:
 				currentClassFile << "\t\t}" << std::endl;
 				currentClassFile << "\t}" << std::endl;
 				currentClassFile << "}" << std::endl;
-
+				simpleSdkFile << "#include \"" << dllToFolderName.c_str() << "/" << classData->m_szName << ".hpp\"" << std::endl;
 				currentClassFile.close();
 
 			}
 			infoFile << std::endl;
 			infoFile.close();
+			simpleSdkFile.close();
 		}
+		sdkFile.close();
 	}
 private:
 

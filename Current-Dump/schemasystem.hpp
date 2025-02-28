@@ -1,0 +1,6 @@
+#include "schemasystem/CSchemaSystemInternalRegistration.hpp"
+#include "schemasystem/InfoForResourceTypeCResourceManifestInternal.hpp"
+#include "schemasystem/ResourceId_t.hpp"
+#include "schemasystem/CExampleSchemaVData_Monomorphic.hpp"
+#include "schemasystem/CExampleSchemaVData_PolymorphicBase.hpp"
+#include "schemasystem/CExampleSchemaVData_PolymorphicDerivedA.hpp"

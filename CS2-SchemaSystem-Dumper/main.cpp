@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
 		}
 	}
 
-	CSchemaDumper::DumpToFS("C:\\xsip-dumper");
+	CSchemaDumper::DumpToFS("C:\\Current-Dump");
 
 	while (true) {
 		Sleep(50000000);
