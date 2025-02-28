@@ -41,7 +41,6 @@ public:
 
 			if (currentScope->m_pEnumBindings) {
 				printf("Class: 0x%p ( %s ) | %i\n", &pSchemaSystem->m_pScopeArray[scopeIdx], currentScope->m_szName, currentScope->m_nNumDeclaredClasses);
-
 			}
 			
 			if (currentScope->m_nNumDeclaredClasses == 65535)

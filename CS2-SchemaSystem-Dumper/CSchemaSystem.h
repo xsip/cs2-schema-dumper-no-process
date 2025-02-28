@@ -62,21 +62,27 @@ namespace SDK
 		CSchemaDeclaredClass* m_pDeclaredClass;
 	};
 
+	/*
+pGlobalScope: 0x108
+m_pDeclaredClasses: 0x440
+m_nNumDeclaredClasses: 0x456
+m_pEnumBindings: 0x468
+*/
+
 	class CSchemaSystemTypeScope
-	{
+	{// 0x18c = pNumEnums
 	public:
 		void* vfptr;
 		char m_szName[256];
 		CSchemaSystemTypeScope* pGlobalScope;
-		S2_PAD(0x338 - 0x8);
-
+		S2_PAD(0x7C);
+		S2_PAD(sizeof(int));
+		S2_PAD(0x2B0);
 		CSchemaDeclaredClassEntry* m_pDeclaredClasses;
-		S2_PAD(0x20);
-		void* m_pEnumBindings;
-
-		S2_PAD(0x6);
-
+		S2_PAD(0xE);
 		uint16_t m_nNumDeclaredClasses;
+		S2_PAD(0x10);
+		void* m_pEnumBindings;		
 	};
 
 	class CSchemaSystem
