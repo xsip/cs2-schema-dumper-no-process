@@ -2,16 +2,16 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "CSchemaInclude.hpp"
+#include "SchemaClassInclude.hpp"
 
-#include "GlobalLoader.hpp"
+#include "CGlobalLoader.hpp"
 #include "memory/PtrCheck.h"
 
 class CSchemaDumper {
 public:
 	inline static void DumpToFS(const char* outputPath) {
 		std::string outputPathStr = std::string(outputPath);
-		auto pSchemaSystem = GlobalLoader::GetSchemaSystem();
+		auto pSchemaSystem = CGlobalLoader::GetSchemaSystem();
 		if (!CSchemaDumper::CreateDir(outputPath)) {
 			printf("Couldn't create output path ( %s )!\n", outputPath);
 			return;

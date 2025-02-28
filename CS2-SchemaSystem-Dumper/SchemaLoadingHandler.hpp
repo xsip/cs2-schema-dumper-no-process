@@ -9,8 +9,8 @@
 #include <vector>
 #include <map>
 
-#include "CSchemaInclude.hpp"
-
+#include "SchemaClassInclude.hpp"
+#include "core/CLogService.hpp"
 class SchemaLoadingHandler {
 private:
 	template<typename T>
@@ -19,6 +19,7 @@ private:
 	typedef uintptr_t(*_InstallSchemaBindings)(const char* interfaceName, SDK::CSchemaSystem* pSchemaSystem);
 
 private:
+	inline static CLogService* pLogger = new CLogService("SchemaLoadingHandler");
 	inline static HINSTANCE schemaSystemDllHandle = NULL;
 	inline static HINSTANCE tier0DllHandle = NULL;
 	inline static std::map<const char*, HINSTANCE> dependencyMap = std::map<const char*, HINSTANCE>{};
@@ -36,32 +37,33 @@ public:
 	inline static SDK::CSchemaSystem *GetSchemaSystem() {
 		return SchemaLoadingHandler::pSchemaSystem;
 	}
-public:
+private:
 	SchemaLoadingHandler() {
 
 	};
+public:
 
 	inline static void LogDependencyMap() {
 		
 		std::map<const char*, HINSTANCE>::iterator it;
 		
-		printf("\n\nDependencyMap:\n");
+		SchemaLoadingHandler::pLogger->Log("\n\nDependencyMap:\n");
 
 		for (it = SchemaLoadingHandler::dependencyMap.begin(); it != SchemaLoadingHandler::dependencyMap.end(); it++)
 		{
-			printf("\t%s: 0x%p\n", it->first, it->second);
+			SchemaLoadingHandler::pLogger->Log("\t%s: 0x%p\n", it->first, it->second);
 		}
 	}
 	inline static void LogLoadedMainDlls() {
 		
 		std::map<const char*, bool>::iterator it;
 
-		printf("\n\nLoaded Main DLLs:\n");
+		SchemaLoadingHandler::pLogger->Log("\n\nLoaded Main DLLs:\n");
 
 
 		for (it = SchemaLoadingHandler::loadedMainDlls.begin(); it != SchemaLoadingHandler::loadedMainDlls.end(); it++)
 		{
-			printf("\t%s: %i\n", it->first, it->second);
+			SchemaLoadingHandler::pLogger->Log("\t%s: %i\n", it->first, it->second);
 		}
 	}
 
@@ -69,12 +71,12 @@ public:
 		
 		std::map<const char*, bool>::iterator it;
 
-		printf("\n\nInstalledSchemaBindings:\n");
+		SchemaLoadingHandler::pLogger->Log("\n\nInstalledSchemaBindings:\n");
 
 
 		for (it = SchemaLoadingHandler::installedSchemaBindings.begin(); it != SchemaLoadingHandler::installedSchemaBindings.end(); it++)
 		{
-			printf("\t%s: %i\n", it->first, it->second);
+			SchemaLoadingHandler::pLogger->Log("\t%s: %i\n", it->first, it->second);
 		}
 	}
 
@@ -94,16 +96,17 @@ public:
 
 		std::map<const char*, HINSTANCE>::iterator it;
 		HINSTANCE foundDll = NULL;
+		auto dllNameWithoutPath = SchemaLoadingHandler::GetModuleNameFromPath(dllName);
 		for (it = SchemaLoadingHandler::dependencyMap.begin(); it != SchemaLoadingHandler::dependencyMap.end(); it++)
 		{
-			if (strstr(it->first, dllName)) {
+			if (strcmp(it->first, dllNameWithoutPath->c_str()) == 0) {
 				foundDll = it->second;
 				break;
 			}
 		}
 
 		if (!foundDll) {
-			printf("Didn't find %s to get CreateInterface function..\n", dllName);
+			SchemaLoadingHandler::pLogger->Log("Didn't find %s to get CreateInterface function..\n", dllName);
 			return NULL;
 		}
 
@@ -114,4 +117,21 @@ public:
 	static bool InstallSchemaBindings(const char* dllName, const char* schema = "SchemaSystem_001");
 	static bool LoadNeededDlls(std::vector<const char*> dependencyDlls, const char* mainDll);
 	
+	static std::string* GetModuleNameFromPath(const char* dllName) {
+		std::string* s = new std::string(dllName);
+		std::string delimiter = "\\";
+		size_t pos_start = 0, pos_end, delim_len = delimiter.length();
+		std::string token;
+		std::vector<std::string> res;
+
+		while ((pos_end = s->find(delimiter, pos_start)) != std::string::npos) {
+			token = s->substr(pos_start, pos_end - pos_start);
+			pos_start = pos_end + delim_len;
+			res.push_back(token);
+		}
+
+		res.push_back(s->substr(pos_start));
+		return new std::string(res[res.size() - 1]);
+	}
+
 };

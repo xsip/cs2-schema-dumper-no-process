@@ -1,11 +1,13 @@
 #pragma once
 #include "SchemaLoaders.hpp"
+#include "core/CLogService.hpp"
 
 #include <iostream>
 #include <sstream>
 
-class GlobalLoader {
+class CGlobalLoader {
 private:
+	inline static CLogService* pLogger = new CLogService("CGlobalLoader");
 
 	inline static std::vector<BaseLoader*> loaderList = std::vector<BaseLoader*>{
 		new ClientSchemaLoader(),
@@ -41,24 +43,36 @@ private:
 public:
 	inline static bool Initialize() {
 
+		auto start = std::chrono::system_clock::now();
 
-		for (const auto loader : GlobalLoader::loaderList) {
+		for (const auto loader : CGlobalLoader::loaderList) {
 			if (!loader->Initialize()) {
-				printf("Coudln't initialize %s Loader!\n", loader->GetModuleNameFromPath()->c_str());
+				CGlobalLoader::pLogger->Log("Coudln't initialize %s Loader!\n", loader->GetModuleNameFromPath()->c_str());
 				return false;
 			}
 		}
+
+		auto end = std::chrono::system_clock::now();
+
+		std::chrono::duration<double> elapsed_seconds = end - start;
+		CGlobalLoader::pLogger->Log("Initializing Loaders took %.5f seconds\n", elapsed_seconds.count());
 		return true;
 	}
 
 	inline static bool InstallSchemaBindings() {
+		auto start = std::chrono::system_clock::now();
 
-		for (const auto loader : GlobalLoader::loaderList) {
+		for (const auto loader : CGlobalLoader::loaderList) {
 			if (!loader->InstallBindings()) {
-				printf("Coudln't install bindings for %s Loader!\n", loader->GetModuleNameFromPath()->c_str());
+				CGlobalLoader::pLogger->Log("Coudln't install bindings for %s Loader!\n", loader->GetModuleNameFromPath()->c_str());
 				return false;
 			}
 		}
+
+		auto end = std::chrono::system_clock::now();
+
+		std::chrono::duration<double> elapsed_seconds = end - start;
+		CGlobalLoader::pLogger->Log("Installing Schema Bindings took %.5f seconds\n", elapsed_seconds.count());
 		return true;
 	}
 

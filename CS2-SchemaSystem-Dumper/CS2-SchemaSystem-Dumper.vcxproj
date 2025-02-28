@@ -137,9 +137,10 @@
     <ClCompile Include="SchemaLoadingHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="core\CLogService.hpp" />
     <ClInclude Include="CSchemaDumper.hpp" />
-    <ClInclude Include="CSchemaInclude.hpp" />
-    <ClInclude Include="GlobalLoader.hpp" />
+    <ClInclude Include="SchemaClassInclude.hpp" />
+    <ClInclude Include="CGlobalLoader.hpp" />
     <ClInclude Include="BaseLoader.hpp" />
     <ClInclude Include="loaders\AnimationSystemSchemaLoader.hpp" />
     <ClInclude Include="loaders\ClientSchemaLoader.hpp" />

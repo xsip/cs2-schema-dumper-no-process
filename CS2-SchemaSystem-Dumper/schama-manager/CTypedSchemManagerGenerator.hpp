@@ -5,7 +5,7 @@
 #include <iostream>
 #include <fstream>
 
-#include "../GlobalLoader.hpp"
+#include "../CGlobalLoader.hpp"
 
 class CTypedSchemaManagerGenerator {
 public:
@@ -16,7 +16,7 @@ public:
 		std::ofstream classResolverFile;
 		std::ofstream classEnumFile;
 
-		auto pSchemaSystem = GlobalLoader::GetSchemaSystem();
+		auto pSchemaSystem = CGlobalLoader::GetSchemaSystem();
 		
 		auto moduleEnumFilePath = path + std::string("\\ModuleConstants.hpp");
 		auto classEnumFilePath = path + std::string("\\ClassConstants.hpp");

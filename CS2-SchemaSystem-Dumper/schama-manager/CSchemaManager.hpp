@@ -1,21 +1,24 @@
 #pragma once 
-#include "../GlobalLoader.hpp"
+#include "../CGlobalLoader.hpp"
 #include <map>
 #include <string>
 #include "CSchemaManagerModule.hpp"
-
+#include "../core/CLogService.hpp"
 class CSchemaManager {
 private:
+	inline static CLogService* pLogger = new CLogService("CSchemaManager");
+
 	inline static bool initialized = false;
 	inline static std::map <const char*, CSchemaManagerModule*> moduleMap = {};
 	inline static bool Initialize() {
+		auto start = std::chrono::system_clock::now();
 		CSchemaManagerModule::CreateEmptyModule();
 		CSchemaManagerClass::CreateEmptyClass();
 		CSchemaManagerField::CreateEmptyField();
 		if (CSchemaManager::initialized)
 			return true;
 
-		auto pSchemaSystem = GlobalLoader::GetSchemaSystem();
+		auto pSchemaSystem = CGlobalLoader::GetSchemaSystem();
 		for (int scopeIdx = 0; scopeIdx < pSchemaSystem->m_nScopeSize; scopeIdx++) {
 
 			auto currentScope = pSchemaSystem->GetScopeEntry(scopeIdx);
@@ -34,6 +37,11 @@ private:
 				moduleMap[moduleNameFixed->c_str()]->AddClass(classData);
 			}
 		}
+
+		auto end = std::chrono::system_clock::now();
+
+		std::chrono::duration<double> elapsed_seconds = end - start;
+		CSchemaManager::pLogger->Log("Initializing took %.5f seconds\n", elapsed_seconds.count());
 		return CSchemaManager::initialized = true;
 	};
 public:
@@ -47,7 +55,7 @@ public:
 		for (it = CSchemaManager::moduleMap.begin(); it != CSchemaManager::moduleMap.end(); it++)
 		{
 			if (strcmp(it->first, moduleName) == 0) {
-				printf("Found Module: %s\n", moduleName);
+				CSchemaManager::pLogger->Log("Found Module: %s\n", moduleName);
 				return it->second;
 			}
 		}

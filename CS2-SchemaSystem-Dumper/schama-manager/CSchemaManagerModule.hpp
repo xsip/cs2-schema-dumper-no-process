@@ -2,11 +2,12 @@
 #include <map>
 
 #include "CSchemaManagerClass.hpp"
-
+#include "../core/CLogService.hpp"
 class CSchemaManagerModule {
 
 private:
 	const char* moduleName;
+	inline static CLogService* pLogger = new CLogService("CSchemaManagerModule");
 
 public:
 	
@@ -38,7 +39,7 @@ public:
 		for (it = CSchemaManagerModule::classMap.begin(); it != CSchemaManagerModule::classMap.end(); it++)
 		{
 			if (strcmp(it->first, fieldName) == 0) {
-				printf("Found Field: %s\n", fieldName);
+				CSchemaManagerModule::pLogger->Log("Found Field: %s\n", fieldName);
 				return it->second;
 			}
 		}

@@ -5,12 +5,12 @@
  bool SchemaLoadingHandler::InstallSchemaBindings(const char* _dllName, const char* schema) {
 	 auto dllName = BaseLoader::GetModuleNameFromPath(_dllName)->c_str();
 	if (SchemaLoadingHandler::IsInInstalledSchemaBindings(_dllName)) {
-		printf("Ignoring %s\n", dllName);
+		SchemaLoadingHandler::pLogger->Log("Ignoring %s\n", dllName);
 		return true;
 	}
 
 	if (SchemaLoadingHandler::pSchemaSystem == NULL) {
-		printf("pSchemaSystem is NULL!\nCouldn't install schema bindings for %s\n", dllName);
+		SchemaLoadingHandler::pLogger->Log("pSchemaSystem is NULL!\nCouldn't install schema bindings for %s\n", dllName);
 		return false;
 	}
 
@@ -18,13 +18,13 @@
 	HINSTANCE foundDll = NULL;
 	for (it = SchemaLoadingHandler::dependencyMap.begin(); it != SchemaLoadingHandler::dependencyMap.end(); it++)
 	{
-		if (strstr(it->first, dllName)) {
+		if (strcmp(it->first, dllName) == 0) {
 			foundDll = it->second;
 			break;
 		}
 	}
 	if (!foundDll) {
-		printf("Didn't find %s to get InstallBindings function..\n", dllName);
+		SchemaLoadingHandler::pLogger->Log("Didn't find %s to get InstallBindings function..\n", dllName);
 		return false;
 	}
 
@@ -34,10 +34,10 @@
 	auto res = installBindingsFn(schema, SchemaLoadingHandler::pSchemaSystem);
 
 	if (res != 0x00000000C0000001) {
-		printf("Couldn't install %s schemaBindings for %s! | 0x%p\n", schema, dllName, res);
+		SchemaLoadingHandler::pLogger->Log("Couldn't install %s schemaBindings for %s! | 0x%p\n", schema, dllName, res);
 		return false;
 	}
-	printf("Installed %s Bindings for %s\n", schema, dllName);
+	SchemaLoadingHandler::pLogger->Log("Installed %s Bindings for %s\n", schema, dllName);
 	SchemaLoadingHandler::installedSchemaBindings[dllName] = true;
 
 	return true;
@@ -47,10 +47,9 @@
  bool SchemaLoadingHandler::IsInDependencyMap(const char* dllWithPath) {
 	 std::map<const char*, HINSTANCE>::iterator it;
 	 auto dllName = BaseLoader::GetModuleNameFromPath(dllWithPath)->c_str();
-
 	 for (it = SchemaLoadingHandler::dependencyMap.begin(); it != SchemaLoadingHandler::dependencyMap.end(); it++)
 	 {
-		 if (strstr(it->first, dllName))
+		 if (strcmp(it->first, dllName) == 0)
 			 return true;
 	 }
 
@@ -63,7 +62,7 @@
 
 	 for (it = SchemaLoadingHandler::loadedMainDlls.begin(); it != SchemaLoadingHandler::loadedMainDlls.end(); it++)
 	 {
-		 if (strstr(it->first, dllName))
+		 if (strcmp(it->first, dllName) == 0)
 			 return true;
 	 }
 
@@ -76,7 +75,7 @@
 
 	 for (it = SchemaLoadingHandler::installedSchemaBindings.begin(); it != SchemaLoadingHandler::installedSchemaBindings.end(); it++)
 	 {
-		 if (strstr(it->first, dllName))
+		 if (strcmp(it->first, dllName) == 0)
 			 return true;
 	 }
 
@@ -100,7 +99,7 @@
 			SchemaLoadingHandler::tier0DllHandle = LoadLibrary(_T(tier0FullPath.c_str()));
 
 			if (SchemaLoadingHandler::tier0DllHandle == NULL) {
-				printf("tier0.dll couldn't be loaded: 0x%x\n", GetLastError());
+				SchemaLoadingHandler::pLogger->Log("tier0.dll couldn't be loaded: 0x%x\n", GetLastError());
 				return false;
 			}
 			SchemaLoadingHandler::dependencyMap.insert({ BaseLoader::GetModuleNameFromPath(tier0FullPath.c_str())->c_str(), SchemaLoadingHandler::tier0DllHandle });
@@ -112,7 +111,7 @@
 			SchemaLoadingHandler::schemaSystemDllHandle = LoadLibrary(_T(schemaSystemFullPath.c_str()));
 
 			if (SchemaLoadingHandler::schemaSystemDllHandle == NULL) {
-				printf("schemaSystem.dll couldn't be loaded 0x%x\n", GetLastError());
+				SchemaLoadingHandler::pLogger->Log("schemaSystem.dll couldn't be loaded 0x%x\n", GetLastError());
 				return false;
 			}
 
@@ -124,12 +123,12 @@
 			SchemaLoadingHandler::pSchemaSystem = SchemaLoadingHandler::GetCreateInterfaceFn<SDK::CSchemaSystem*>("schemasystem.dll")("SchemaSystem_001", NULL);
 
 		if (pSchemaSystem == NULL) {
-			printf("Couldn't create SchemaSystem_001\n");
+			SchemaLoadingHandler::pLogger->Log("Couldn't create SchemaSystem_001\n");
 			return false;
 		}
 
 		if (!SchemaLoadingHandler::InstallSchemaBindings("schemasystem.dll")) {
-			printf("Couldnt install schema bindings for schemasystem.dll");
+			SchemaLoadingHandler::pLogger->Log("Couldnt install schema bindings for schemasystem.dll");
 			return false;
 		}
 
@@ -139,13 +138,13 @@
 		auto dllToLoad = BaseLoader::GetModuleNameFromPath(_dllToLoad)->c_str();
 
 		if (SchemaLoadingHandler::IsInDependencyMap(dllToLoad)) {
-			printf("%s alread loaded!\n", dllToLoad);
+			// SchemaLoadingHandler::pLogger->Log("%s already loaded!\n", dllToLoad);
 			continue;
 		}
 		std::string path = std::string(BaseLoader::basePath) + std::string(_dllToLoad);
 		auto handle = LoadLibrary(_T(path.c_str()));
 		if (handle == NULL) {
-			printf("[WTF]Coudln't load \"%s\" (0x%x)\n", dllToLoad, GetLastError());
+			SchemaLoadingHandler::pLogger->Log("Coudln't load \"%s\" (0x%x)\n", dllToLoad, GetLastError());
 			return false;
 		}
 		SchemaLoadingHandler::dependencyMap.insert({ dllToLoad, handle });
@@ -156,7 +155,7 @@
 	if (SchemaLoadingHandler::IsInLoadedMainDllsMap(mainPath.c_str())) {
 		auto mainHandle = LoadLibrary(_T(mainPath.c_str()));
 		if (mainHandle == NULL) {
-			printf("Coudln't load main dll \"%s\" (0x%x)\n", mainDll, GetLastError());
+			SchemaLoadingHandler::pLogger->Log("Coudln't load main dll \"%s\" (0x%x)\n", mainDll, GetLastError());
 			return false;
 		}
 
