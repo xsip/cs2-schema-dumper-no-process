@@ -131,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="SchemaLoaders.hpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="HostSchemaLoader.hpp" />
     <ClCompile Include="NavSystemSchemaLoader.hpp" />
@@ -140,7 +141,7 @@
     <ClCompile Include="V8SystemSchemaLoader.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AllLoader.hpp" />
+    <ClInclude Include="GlobalLoader.hpp" />
     <ClInclude Include="AnimationSystemSchemaLoader.hpp" />
     <ClInclude Include="BaseLoader.hpp" />
     <ClInclude Include="ClientSchemaLoader.hpp" />
@@ -160,7 +161,7 @@
     <ClInclude Include="RenderSystemDx11SchemaLoader.hpp" />
     <ClInclude Include="ResourceSystemSchemaLoader.hpp" />
     <ClInclude Include="SceneSystemSchemaLoader.hpp" />
-    <ClInclude Include="SchemaLoader.hpp" />
+    <ClInclude Include="SchemaLoadingHandler.hpp" />
     <ClInclude Include="memory.h" />
     <ClInclude Include="ServerSchemaLoader.hpp" />
     <ClInclude Include="SoundSystemSchemaLoader.hpp" />

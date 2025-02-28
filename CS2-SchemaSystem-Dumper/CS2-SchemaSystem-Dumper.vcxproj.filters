@@ -39,6 +39,9 @@
     <ClCompile Include="NavSystemSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClCompile>
+    <ClCompile Include="SchemaLoaders.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="memory.h">
@@ -47,7 +50,7 @@
     <ClInclude Include="CSchemaSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SchemaLoader.hpp">
+    <ClInclude Include="SchemaLoadingHandler.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ClientSchemaLoader.hpp">
@@ -62,7 +65,7 @@
     <ClInclude Include="FileSystemStdioSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="AllLoader.hpp">
+    <ClInclude Include="GlobalLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
     <ClInclude Include="InputSystemSchemaLoader.hpp">

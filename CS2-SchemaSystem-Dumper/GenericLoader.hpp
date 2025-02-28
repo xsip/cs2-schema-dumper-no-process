@@ -1,5 +1,5 @@
 #pragma once
-#include "SchemaLoader.hpp"
+#include "SchemaLoadingHandler.hpp"
 
 class GenericLoader: public BaseLoader {
 public:
@@ -14,14 +14,14 @@ public:
 		if (dllsLoaded)
 			return true;
 
-		return dllsLoaded = SchemaLoader::LoadNeededDlls(dllsToLoad, mainDll);
+		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dllsToLoad, mainDll);
 	}
 
 	inline bool InstallBindings() {
 		if (bindingsInstalled)
 			return true;
 
-		return bindingsInstalled = SchemaLoader::InstallSchemaBindings(mainDll);
+		return bindingsInstalled = SchemaLoadingHandler::InstallSchemaBindings(mainDll);
 	}
 
 };

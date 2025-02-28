@@ -1,38 +1,10 @@
 #pragma once
-#include "ClientSchemaLoader.hpp"
-#include "Engine2SchemaLoader.hpp"
-#include "FileSystemStdioSchemaLoader.hpp"
-#include "ServerSchemaLoader.hpp"
-#include "InputSystemSchemaLoader.hpp"
-#include "ImeManagerSchemaLoader.hpp"
-#include "LocalizeSchemaLoader.hpp"
-#include "RenderSystemDx11SchemaLoader.hpp"
-#include "ResourceSystemSchemaLoader.hpp"
-#include "MaterialSystem2SchemaLoader.hpp"
-#include "MeshSystemSchemaLoader.hpp"
-#include "WorldRendererSchemaLoader.hpp"
-#include "PulseSystemSchemaLoader.hpp"
-#include "VScriptSchemaLoader.hpp"
-#include "NetworkSystemSchemaLoader.hpp"
-#include "AnimationSystemSchemaLoader.hpp"
-#include "VPhysics2SchemaLoader.hpp"
-#include "SoundSystemSchemaLoader.hpp"
-#include "SteamAudioSchemaLoader.hpp"
-#include "SceneSystemSchemaLoader.hpp"
-#include "ParticlesSchemaLoader.hpp"
-#include "PanoramaUiClientSchemaLoader.hpp"
-#include "V8SystemSchemaLoader.hpp"
-#include "PanoramaSchemaLoader.hpp"
-#include "HostSchemaLoader.hpp"
-#include "SceneFileCacheSchemaLoader.hpp"
-#include "MatchMakingSchemaLoader.hpp"
-#include "NavSystemSchemaLoader.hpp"
+#include "SchemaLoaders.hpp"
 
-#include "GenericLoader.hpp"
 #include <iostream>
 #include <sstream>
 
-class AllLoader {
+class GlobalLoader {
 private:
 
 	inline static std::vector<BaseLoader*> loaderList = std::vector<BaseLoader*>{
@@ -70,7 +42,7 @@ public:
 	inline static bool Initialize() {
 
 
-		for (const auto loader : AllLoader::loaderList) {
+		for (const auto loader : GlobalLoader::loaderList) {
 			if (!loader->Initialize()) {
 				printf("Coudln't initialize %s Loader!\n", loader->GetModuleNameFromPath()->c_str());
 				return false;
@@ -81,7 +53,7 @@ public:
 
 	inline static bool InstallSchemaBindings() {
 
-		for (const auto loader : AllLoader::loaderList) {
+		for (const auto loader : GlobalLoader::loaderList) {
 			if (!loader->InstallBindings()) {
 				printf("Coudln't initialize %s Loader!\n", loader->GetModuleNameFromPath()->c_str());
 				return false;
@@ -91,6 +63,6 @@ public:
 	}
 
 	inline static SDK::CSchemaSystem* GetSchemaSystem() {
-		return SchemaLoader::GetSchemaSystem();
+		return SchemaLoadingHandler::GetSchemaSystem();
 	}
 };

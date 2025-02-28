@@ -1,5 +1,5 @@
 #pragma once
-#include "SchemaLoader.hpp"
+#include "SchemaLoadingHandler.hpp"
 
 class PanoramaSchemaLoader : public BaseLoader {
 
@@ -38,10 +38,10 @@ public:
 		};
 		mainDll = "game\\bin\\win64\\panorama.dll";
 
-		return dllsLoaded = SchemaLoader::LoadNeededDlls(dlls, mainDll);
+		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
 	}
 
 	inline bool InstallBindings() {
-		return bindingsInstalled = SchemaLoader::InstallSchemaBindings(mainDll);
+		return bindingsInstalled = SchemaLoadingHandler::InstallSchemaBindings(mainDll);
 	}
 };
