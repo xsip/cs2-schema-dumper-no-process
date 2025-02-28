@@ -13,10 +13,7 @@ public:
 
 	inline bool Initialize() {
 
-		if (dllsLoaded)
-			return true;
-
-		std::vector<const char*> dlls = {
+		dllsToLoad = {
 			"game\\bin\\win64\\steam_api64.dll",
 			"game\\bin\\win64\\tier0.dll",
 			// needed for v8
@@ -31,10 +28,10 @@ public:
 		};
 		mainDll = "game\\bin\\win64\\v8system.dll";
 
-		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
+		return BaseLoader::Initialize();
 	}
 
 	inline bool InstallBindings() {
-		return bindingsInstalled = SchemaLoadingHandler::InstallSchemaBindings(mainDll);
+		return BaseLoader::InstallBindings();
 	}
 };

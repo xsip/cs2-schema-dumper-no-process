@@ -13,10 +13,7 @@ public:
 
 	inline bool Initialize() {
 
-		if (dllsLoaded)
-			return true;
-
-		std::vector<const char*> dlls = {
+		dllsToLoad = {
 			"game\\bin\\win64\\tier0.dll",
 			// needed for v8
 			"game\\bin\\win64\\dbghelp.dll", // needed for libbase!
@@ -29,10 +26,10 @@ public:
 		};
 		mainDll = "game\\bin\\win64\\pulse_system.dll";
 
-		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
+		return BaseLoader::Initialize();
 	}
 
 	inline bool InstallBindings() {
-		return bindingsInstalled = SchemaLoadingHandler::InstallSchemaBindings(mainDll);
+		return BaseLoader::InstallBindings();
 	}
 };

@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
-#define BASE_PATH 
+#include "SchemaLoadingHandler.hpp"
+
 class BaseLoader {
 protected:
 	const char* mainDll;
@@ -12,9 +13,24 @@ protected:
 public:
     inline static const char* basePath = "D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\";
 
+protected:
+    inline bool Initialize() {
 
-	virtual inline bool Initialize() = 0;
-	virtual inline bool InstallBindings() = 0;
+        if (dllsLoaded)
+            return true;
+
+        return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dllsToLoad, mainDll);
+    }
+
+    inline bool InstallBindings() {
+
+        if (bindingsInstalled)
+            return true;
+        
+        return bindingsInstalled = SchemaLoadingHandler::InstallSchemaBindings(mainDll);
+
+    }
+
     std::string *GetModuleNameFromPath() {
         std::string* s = new std::string(mainDll);
         std::string delimiter = "\\";

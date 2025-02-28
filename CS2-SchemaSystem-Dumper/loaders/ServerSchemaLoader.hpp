@@ -13,18 +13,17 @@ public:
 
 	inline bool Initialize() {
 
-		if (dllsLoaded)
-			return true;
-
-		std::vector<const char*> dlls = {
+		dllsToLoad = {
 			"game\\bin\\win64\\steam_api64.dll",
 		};
 		mainDll = "game\\csgo\\bin\\win64\\server.dll";
 
-		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
+		return BaseLoader::Initialize();
+
 	}
 
 	inline bool InstallBindings() {
-		return bindingsInstalled = SchemaLoadingHandler::InstallSchemaBindings(mainDll);
+		return BaseLoader::InstallBindings();
 	}
+
 };
