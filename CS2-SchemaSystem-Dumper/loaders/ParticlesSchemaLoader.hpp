@@ -1,10 +1,10 @@
 #pragma once
-#include "SchemaLoadingHandler.hpp"
+#include "../SchemaLoadingHandler.hpp"
 
-class WorldRendererSchemaLoader : public BaseLoader {
+class ParticlesSchemaLoader : public BaseLoader {
 
 public:
-	WorldRendererSchemaLoader() :
+	ParticlesSchemaLoader() :
 		BaseLoader() {
 		mainDll = "";
 		dllsLoaded = false;
@@ -19,7 +19,7 @@ public:
 		std::vector<const char*> dlls = {
 			"game\\bin\\win64\\tier0.dll"
 		};
-		mainDll = "game\\bin\\win64\\worldrenderer.dll";
+		mainDll = "game\\bin\\win64\\particles.dll";
 
 		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
 	}

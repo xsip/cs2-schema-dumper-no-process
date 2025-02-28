@@ -1,10 +1,11 @@
+// scenefilecache
 #pragma once
-#include "SchemaLoadingHandler.hpp"
+#include "../SchemaLoadingHandler.hpp"
 
-class InputSystemSchemaLoader : public BaseLoader {
+class SceneFileCacheSchemaLoader : public BaseLoader {
 
 public:
-	InputSystemSchemaLoader() :
+	SceneFileCacheSchemaLoader() :
 		BaseLoader() {
 		mainDll = "";
 		dllsLoaded = false;
@@ -17,9 +18,9 @@ public:
 			return true;
 
 		std::vector<const char*> dlls = {
-			"game\\bin\\win64\\tier0.dll"
+			"game\\bin\\win64\\tier0.dll",
 		};
-		mainDll = "game\\bin\\win64\\inputsystem.dll";
+		mainDll = "game\\bin\\win64\\scenefilecache.dll";
 
 		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
 	}

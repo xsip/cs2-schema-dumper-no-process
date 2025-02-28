@@ -16,28 +16,13 @@
     <Filter Include="Header Files\Loaders">
       <UniqueIdentifier>{2729144e-3522-42e3-bcdb-7a0b97e04926}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Loaders\Abstract">
+      <UniqueIdentifier>{52cfb179-d962-43ea-9406-7192a65010af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ParticlesSchemaLoader.hpp">
-      <Filter>Header Files\Loaders</Filter>
-    </ClCompile>
-    <ClCompile Include="PanoramaUiClientSchemaLoader.hpp">
-      <Filter>Header Files\Loaders</Filter>
-    </ClCompile>
-    <ClCompile Include="V8SystemSchemaLoader.hpp">
-      <Filter>Header Files\Loaders</Filter>
-    </ClCompile>
-    <ClCompile Include="HostSchemaLoader.hpp">
-      <Filter>Header Files\Loaders</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneFileCacheSchemaLoader.hpp">
-      <Filter>Header Files\Loaders</Filter>
-    </ClCompile>
-    <ClCompile Include="NavSystemSchemaLoader.hpp">
-      <Filter>Header Files\Loaders</Filter>
     </ClCompile>
     <ClCompile Include="SchemaLoaders.hpp">
       <Filter>Header Files\Loaders</Filter>
@@ -53,79 +38,100 @@
     <ClInclude Include="SchemaLoadingHandler.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ClientSchemaLoader.hpp">
-      <Filter>Header Files\Loaders</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine2SchemaLoader.hpp">
-      <Filter>Header Files\Loaders</Filter>
-    </ClInclude>
-    <ClInclude Include="ServerSchemaLoader.hpp">
-      <Filter>Header Files\Loaders</Filter>
-    </ClInclude>
-    <ClInclude Include="FileSystemStdioSchemaLoader.hpp">
-      <Filter>Header Files\Loaders</Filter>
-    </ClInclude>
     <ClInclude Include="GlobalLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
-    </ClInclude>
-    <ClInclude Include="InputSystemSchemaLoader.hpp">
-      <Filter>Header Files\Loaders</Filter>
-    </ClInclude>
-    <ClInclude Include="ImeManagerSchemaLoader.hpp">
-      <Filter>Header Files\Loaders</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseLoader.hpp">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GenericLoader.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LocalizeSchemaLoader.hpp">
+    <ClInclude Include="BaseLoader.hpp">
+      <Filter>Header Files\Loaders\Abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\AnimationSystemSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="RenderSystemDx11SchemaLoader.hpp">
+    <ClInclude Include="loaders\ClientSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceSystemSchemaLoader.hpp">
+    <ClInclude Include="loaders\Engine2SchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="MeshSystemSchemaLoader.hpp">
+    <ClInclude Include="loaders\FileSystemStdioSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="MaterialSystem2SchemaLoader.hpp">
+    <ClInclude Include="loaders\HostSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="WorldRendererSchemaLoader.hpp">
+    <ClInclude Include="loaders\ImeManagerSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="VScriptSchemaLoader.hpp">
+    <ClInclude Include="loaders\InputSystemSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="PulseSystemSchemaLoader.hpp">
+    <ClInclude Include="loaders\LocalizeSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="NetworkSystemSchemaLoader.hpp">
+    <ClInclude Include="loaders\MatchMakingSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="VPhysics2SchemaLoader.hpp">
+    <ClInclude Include="loaders\MaterialSystem2SchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="AnimationSystemSchemaLoader.hpp">
+    <ClInclude Include="loaders\MeshSystemSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="SoundSystemSchemaLoader.hpp">
+    <ClInclude Include="loaders\NavSystemSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="SteamAudioSchemaLoader.hpp">
+    <ClInclude Include="loaders\NetworkSystemSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="SceneSystemSchemaLoader.hpp">
+    <ClInclude Include="loaders\PanoramaSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="PanoramaSchemaLoader.hpp">
+    <ClInclude Include="loaders\PanoramaUiClientSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="MatchMakingSchemaLoader.hpp">
+    <ClInclude Include="loaders\ParticlesSchemaLoader.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\PulseSystemSchemaLoader.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\RenderSystemDx11SchemaLoader.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\ResourceSystemSchemaLoader.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\SceneFileCacheSchemaLoader.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\SceneSystemSchemaLoader.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\SchemaLoaders.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\ServerSchemaLoader.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\SoundSystemSchemaLoader.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\SteamAudioSchemaLoader.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\V8SystemSchemaLoader.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\VPhysics2SchemaLoader.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\VScriptSchemaLoader.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\WorldRendererSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
   </ItemGroup>

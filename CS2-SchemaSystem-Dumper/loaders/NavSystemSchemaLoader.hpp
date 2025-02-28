@@ -1,12 +1,10 @@
-
-
 #pragma once
-#include "SchemaLoadingHandler.hpp"
+#include "../SchemaLoadingHandler.hpp"
 
-class AnimationSystemSchemaLoader : public BaseLoader {
+class NavSystemSchemaLoader : public BaseLoader {
 
 public:
-	AnimationSystemSchemaLoader() :
+	NavSystemSchemaLoader() :
 		BaseLoader() {
 		mainDll = "";
 		dllsLoaded = false;
@@ -21,7 +19,7 @@ public:
 		std::vector<const char*> dlls = {
 			"game\\bin\\win64\\tier0.dll"
 		};
-		mainDll = "game\\bin\\win64\\animationsystem.dll";
+		mainDll = "game\\bin\\win64\\navsystem.dll";
 
 		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
 	}

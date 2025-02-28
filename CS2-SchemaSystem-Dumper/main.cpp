@@ -9,7 +9,6 @@
 
 #include "memory.h"
 #include "CSchemaSystem.h"
-#include  "SchemaLoadingHandler.hpp"
 #include "GlobalLoader.hpp"
 
 int main(int argc, char* argv[]) {

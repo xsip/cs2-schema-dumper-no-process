@@ -1,10 +1,10 @@
 #pragma once
-#include "SchemaLoadingHandler.hpp"
+#include "../SchemaLoadingHandler.hpp"
 
-class PanoramaUiClientSchemaLoader : public BaseLoader {
+class V8SystemSchemaLoader : public BaseLoader {
 
 public:
-	PanoramaUiClientSchemaLoader() :
+	V8SystemSchemaLoader() :
 		BaseLoader() {
 		mainDll = "";
 		dllsLoaded = false;
@@ -26,15 +26,10 @@ public:
 			"game\\bin\\win64\\v8_icui18n.dll",
 			"game\\bin\\win64\\v8_zlib.dll",
 			"game\\bin\\win64\\v8.dll", // actual v8
-			// needed for video64.dll
-			"game\\bin\\win64\\libavutil-56.dll", // needed in avcodec 58
-			"game\\bin\\win64\\libavcodec-58.dll",
-			"game\\bin\\win64\\libavformat-58.dll",
-			"game\\bin\\win64\\libavresample-4.dll",
-			"game\\bin\\win64\\libswscale-5.dll",
-			"game\\bin\\win64\\video64.dll",
+			"game\\bin\\win64\\v8_libplatform.dll",
+
 		};
-		mainDll = "game\\bin\\win64\\panoramauiclient.dll";
+		mainDll = "game\\bin\\win64\\v8system.dll";
 
 		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
 	}

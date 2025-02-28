@@ -1,10 +1,12 @@
-#pragma once
-#include "SchemaLoadingHandler.hpp"
 
-class VScriptSchemaLoader : public BaseLoader {
+
+#pragma once
+#include "../SchemaLoadingHandler.hpp"
+
+class RenderSystemDx11SchemaLoader : public BaseLoader {
 
 public:
-	VScriptSchemaLoader() :
+	RenderSystemDx11SchemaLoader() :
 		BaseLoader() {
 		mainDll = "";
 		dllsLoaded = false;
@@ -17,9 +19,11 @@ public:
 			return true;
 
 		std::vector<const char*> dlls = {
+			"game\\bin\\win64\\amd_ags_x64.dll",
+			"game\\bin\\win64\\D3DCOMPILER_47.dll",
 			"game\\bin\\win64\\tier0.dll"
 		};
-		mainDll = "game\\bin\\win64\\vscript.dll";
+		mainDll = "game\\bin\\win64\\rendersystemdx11.dll";
 
 		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
 	}

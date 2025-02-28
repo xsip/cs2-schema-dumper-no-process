@@ -1,10 +1,12 @@
-#pragma once
-#include "SchemaLoadingHandler.hpp"
+// D:\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\bin\win64\localize.dll
 
-class Engine2SchemaLoader : public BaseLoader {
+#pragma once
+#include "../SchemaLoadingHandler.hpp"
+
+class LocalizeSchemaLoader : public BaseLoader {
 
 public:
-	Engine2SchemaLoader() :
+	LocalizeSchemaLoader() :
 		BaseLoader() {
 		mainDll = "";
 		dllsLoaded = false;
@@ -17,11 +19,9 @@ public:
 			return true;
 
 		std::vector<const char*> dlls = {
-			"game\\bin\\win64\\steam_api64.dll",
-			"game\\bin\\win64\\steamnetworkingsockets.dll",
 			"game\\bin\\win64\\tier0.dll"
 		};
-		mainDll = "game\\bin\\win64\\engine2.dll";
+		mainDll = "game\\bin\\win64\\localize.dll";
 
 		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
 	}

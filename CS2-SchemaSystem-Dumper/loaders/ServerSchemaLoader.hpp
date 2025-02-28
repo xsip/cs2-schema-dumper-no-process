@@ -1,12 +1,10 @@
-
-
 #pragma once
-#include "SchemaLoadingHandler.hpp"
+#include "../SchemaLoadingHandler.hpp"
 
-class MaterialSystem2SchemaLoader : public BaseLoader {
+class ServerSchemaLoader : public BaseLoader {
 
 public:
-	MaterialSystem2SchemaLoader() :
+	ServerSchemaLoader() :
 		BaseLoader() {
 		mainDll = "";
 		dllsLoaded = false;
@@ -19,9 +17,9 @@ public:
 			return true;
 
 		std::vector<const char*> dlls = {
-			"game\\bin\\win64\\tier0.dll"
+			"game\\bin\\win64\\steam_api64.dll",
 		};
-		mainDll = "game\\bin\\win64\\materialsystem2.dll";
+		mainDll = "game\\csgo\\bin\\win64\\server.dll";
 
 		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
 	}

@@ -1,10 +1,10 @@
 #pragma once
-#include "SchemaLoadingHandler.hpp"
+#include "../SchemaLoadingHandler.hpp"
 
-class ImeManagerSchemaLoader: public  BaseLoader {
+class VPhysics2SchemaLoader : public BaseLoader {
 
 public:
-	ImeManagerSchemaLoader() :
+	VPhysics2SchemaLoader() :
 		BaseLoader() {
 		mainDll = "";
 		dllsLoaded = false;
@@ -19,12 +19,12 @@ public:
 		std::vector<const char*> dlls = {
 			"game\\bin\\win64\\tier0.dll"
 		};
-		mainDll = "game\\bin\\win64\\imemanager.dll";
+		mainDll = "game\\bin\\win64\\vphysics2.dll";
 
 		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
 	}
 
 	inline bool InstallBindings() {
-		return bindingsInstalled =  SchemaLoadingHandler::InstallSchemaBindings(mainDll);
+		return bindingsInstalled = SchemaLoadingHandler::InstallSchemaBindings(mainDll);
 	}
 };

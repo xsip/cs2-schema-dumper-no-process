@@ -1,10 +1,10 @@
 #pragma once
-#include "SchemaLoadingHandler.hpp"
+#include "../SchemaLoadingHandler.hpp"
 
-class SoundSystemSchemaLoader : public BaseLoader {
+class HostSchemaLoader : public BaseLoader {
 
 public:
-	SoundSystemSchemaLoader() :
+	HostSchemaLoader() :
 		BaseLoader() {
 		mainDll = "";
 		dllsLoaded = false;
@@ -17,9 +17,9 @@ public:
 			return true;
 
 		std::vector<const char*> dlls = {
-			"game\\bin\\win64\\tier0.dll"
+			"game\\bin\\win64\\tier0.dll",
 		};
-		mainDll = "game\\bin\\win64\\soundsystem.dll";
+		mainDll = "game\\csgo\\bin\\win64\\host.dll";
 
 		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
 	}

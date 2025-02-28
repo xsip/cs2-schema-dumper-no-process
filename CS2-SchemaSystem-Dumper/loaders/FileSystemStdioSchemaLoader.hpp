@@ -1,10 +1,10 @@
 #pragma once
-#include "SchemaLoadingHandler.hpp"
+#include "../SchemaLoadingHandler.hpp"
 
-class NavSystemSchemaLoader : public BaseLoader {
+class FileSystemStdioSchemaLoader : public BaseLoader {
 
 public:
-	NavSystemSchemaLoader() :
+	FileSystemStdioSchemaLoader() :
 		BaseLoader() {
 		mainDll = "";
 		dllsLoaded = false;
@@ -17,9 +17,9 @@ public:
 			return true;
 
 		std::vector<const char*> dlls = {
-			"game\\bin\\win64\\tier0.dll"
+			"game\\bin\\win64\\steam_api64.dll",
 		};
-		mainDll = "game\\bin\\win64\\navsystem.dll";
+		mainDll = "game\\bin\\win64\\filesystem_stdio.dll";
 
 		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
 	}

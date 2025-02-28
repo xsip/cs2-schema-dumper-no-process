@@ -1,12 +1,10 @@
-
-
 #pragma once
-#include "SchemaLoadingHandler.hpp"
+#include "../SchemaLoadingHandler.hpp"
 
-class RenderSystemDx11SchemaLoader : public BaseLoader {
+class ImeManagerSchemaLoader: public  BaseLoader {
 
 public:
-	RenderSystemDx11SchemaLoader() :
+	ImeManagerSchemaLoader() :
 		BaseLoader() {
 		mainDll = "";
 		dllsLoaded = false;
@@ -19,16 +17,14 @@ public:
 			return true;
 
 		std::vector<const char*> dlls = {
-			"game\\bin\\win64\\amd_ags_x64.dll",
-			"game\\bin\\win64\\D3DCOMPILER_47.dll",
 			"game\\bin\\win64\\tier0.dll"
 		};
-		mainDll = "game\\bin\\win64\\rendersystemdx11.dll";
+		mainDll = "game\\bin\\win64\\imemanager.dll";
 
 		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
 	}
 
 	inline bool InstallBindings() {
-		return bindingsInstalled = SchemaLoadingHandler::InstallSchemaBindings(mainDll);
+		return bindingsInstalled =  SchemaLoadingHandler::InstallSchemaBindings(mainDll);
 	}
 };

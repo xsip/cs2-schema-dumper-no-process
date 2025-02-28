@@ -1,11 +1,11 @@
 #pragma once
-#include "SchemaLoadingHandler.hpp"
+#include "../SchemaLoadingHandler.hpp"
 
-class PanoramaSchemaLoader : public BaseLoader {
+class ClientSchemaLoader : public BaseLoader {
 
 public:
-	PanoramaSchemaLoader() :
-		BaseLoader() {
+	ClientSchemaLoader():
+	BaseLoader() {
 		mainDll = "";
 		dllsLoaded = false;
 		bindingsInstalled = false;
@@ -17,10 +17,8 @@ public:
 			return true;
 
 		std::vector<const char*> dlls = {
-			"game\\bin\\win64\\SDL3.dll",
+			"game\\bin\\win64\\embree3.dll",
 			"game\\bin\\win64\\steam_api64.dll",
-			"game\\bin\\win64\\tier0.dll",
-
 			// needed for v8
 			"game\\bin\\win64\\dbghelp.dll", // needed for libbase!
 			"game\\bin\\win64\\v8_libbase.dll", // actual libbase!
@@ -36,12 +34,12 @@ public:
 			"game\\bin\\win64\\libswscale-5.dll",
 			"game\\bin\\win64\\video64.dll",
 		};
-		mainDll = "game\\bin\\win64\\panorama.dll";
+		mainDll = "game\\csgo\\bin\\win64\\client.dll";
 
 		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
 	}
 
 	inline bool InstallBindings() {
-		return bindingsInstalled = SchemaLoadingHandler::InstallSchemaBindings(mainDll);
+		return bindingsInstalled =  SchemaLoadingHandler::InstallSchemaBindings(mainDll);
 	}
 };

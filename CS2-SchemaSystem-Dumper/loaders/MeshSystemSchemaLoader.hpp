@@ -1,12 +1,12 @@
 
 
 #pragma once
-#include "SchemaLoadingHandler.hpp"
+#include "../SchemaLoadingHandler.hpp"
 
-class ResourceSystemSchemaLoader : public BaseLoader {
+class MeshSystemSchemaLoader : public BaseLoader {
 
 public:
-	ResourceSystemSchemaLoader() :
+	MeshSystemSchemaLoader() :
 		BaseLoader() {
 		mainDll = "";
 		dllsLoaded = false;
@@ -21,7 +21,7 @@ public:
 		std::vector<const char*> dlls = {
 			"game\\bin\\win64\\tier0.dll"
 		};
-		mainDll = "game\\bin\\win64\\resourcesystem.dll";
+		mainDll = "game\\bin\\win64\\meshsystem.dll";
 
 		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
 	}

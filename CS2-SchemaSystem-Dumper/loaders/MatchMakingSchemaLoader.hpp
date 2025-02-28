@@ -1,10 +1,10 @@
 #pragma once
-#include "SchemaLoadingHandler.hpp"
+#include "../SchemaLoadingHandler.hpp"
 
-class SceneSystemSchemaLoader : public BaseLoader {
+class MatchMakingSchemaLoader : public BaseLoader {
 
 public:
-	SceneSystemSchemaLoader() :
+	MatchMakingSchemaLoader() :
 		BaseLoader() {
 		mainDll = "";
 		dllsLoaded = false;
@@ -17,9 +17,10 @@ public:
 			return true;
 
 		std::vector<const char*> dlls = {
+			"game\\bin\\win64\\steam_api64.dll",
 			"game\\bin\\win64\\tier0.dll"
 		};
-		mainDll = "game\\bin\\win64\\scenesystem.dll";
+		mainDll = "game\\csgo\\bin\\win64\\matchmaking.dll";
 
 		return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dlls, mainDll);
 	}
