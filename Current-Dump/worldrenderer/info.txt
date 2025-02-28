@@ -1,0 +1,31 @@
+// Current Scope: worldrenderer.dll
+// Number of Classes In Scope: 26
+
+// Classes: 
+//	CScriptComponent ( 1 properties )
+//	EntityIOConnectionData_t ( 7 properties )
+//	EntityKeyValueData_t ( 2 properties )
+//	PermEntityLumpData_t ( 3 properties )
+//	SceneObject_t ( 14 properties )
+//	BaseSceneObjectOverride_t ( 1 properties )
+//	ExtraVertexStreamOverride_t ( 4 properties )
+//	MaterialOverride_t ( 3 properties )
+//	InfoOverlayData_t ( 10 properties )
+//	BakedLightingInfo_t ( 9 properties )
+//	WorldNodeOnDiskBufferData_t ( 4 properties )
+//	AggregateMeshInfo_t ( 9 properties )
+//	AggregateLODSetup_t ( 3 properties )
+//	AggregateSceneObject_t ( 8 properties )
+//	ClutterTile_t ( 3 properties )
+//	ClutterSceneObject_t ( 8 properties )
+//	WorldNode_t ( 14 properties )
+//	WorldBuilderParams_t ( 5 properties )
+//	NodeData_t ( 7 properties )
+//	World_t ( 4 properties )
+//	VoxelVisBlockOffset_t ( 2 properties )
+//	CVoxelVisibility ( 13 properties )
+//	VMapResourceData_t ( 0 properties )
+//	InfoForResourceTypeVMapResourceData_t ( 0 properties )
+//	CEntityComponent ( 0 properties )
+//	CEntityIdentity ( 11 properties )
+

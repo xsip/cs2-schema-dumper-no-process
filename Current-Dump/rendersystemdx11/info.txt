@@ -1,0 +1,7 @@
+// Current Scope: rendersystemdx11.dll
+// Number of Classes In Scope: 2
+
+// Classes: 
+//	RenderInputLayoutField_t ( 7 properties )
+//	VsInputSignatureElement_t ( 4 properties )
+

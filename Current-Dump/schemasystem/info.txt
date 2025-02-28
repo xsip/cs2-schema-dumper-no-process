@@ -1,0 +1,11 @@
+// Current Scope: schemasystem.dll
+// Number of Classes In Scope: 6
+
+// Classes: 
+//	CSchemaSystemInternalRegistration ( 22 properties )
+//	InfoForResourceTypeCResourceManifestInternal ( 0 properties )
+//	ResourceId_t ( 1 properties )
+//	CExampleSchemaVData_Monomorphic ( 2 properties )
+//	CExampleSchemaVData_PolymorphicBase ( 1 properties )
+//	CExampleSchemaVData_PolymorphicDerivedA ( 1 properties )
+

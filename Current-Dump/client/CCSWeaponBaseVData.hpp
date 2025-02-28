@@ -1,0 +1,101 @@
+#include <Windows.h>
+
+
+namespace xsip {
+	namespace client {
+		namespace CCSWeaponBaseVData {
+			 uintptr_t m_WeaponType = 0x348;
+			 uintptr_t m_WeaponCategory = 0x34c;
+			 uintptr_t m_szViewModel = 0x350;
+			 uintptr_t m_szPlayerModel = 0x430;
+			 uintptr_t m_szWorldDroppedModel = 0x510;
+			 uintptr_t m_szAimsightLensMaskModel = 0x5f0;
+			 uintptr_t m_szMagazineModel = 0x6d0;
+			 uintptr_t m_szHeatEffect = 0x7b0;
+			 uintptr_t m_szEjectBrassEffect = 0x890;
+			 uintptr_t m_szMuzzleFlashParticleAlt = 0x970;
+			 uintptr_t m_szMuzzleFlashThirdPersonParticle = 0xa50;
+			 uintptr_t m_szMuzzleFlashThirdPersonParticleAlt = 0xb30;
+			 uintptr_t m_szTracerParticle = 0xc10;
+			 uintptr_t m_GearSlot = 0xcf0;
+			 uintptr_t m_GearSlotPosition = 0xcf4;
+			 uintptr_t m_DefaultLoadoutSlot = 0xcf8;
+			 uintptr_t m_sWrongTeamMsg = 0xd00;
+			 uintptr_t m_nPrice = 0xd08;
+			 uintptr_t m_nKillAward = 0xd0c;
+			 uintptr_t m_nPrimaryReserveAmmoMax = 0xd10;
+			 uintptr_t m_nSecondaryReserveAmmoMax = 0xd14;
+			 uintptr_t m_bMeleeWeapon = 0xd18;
+			 uintptr_t m_bHasBurstMode = 0xd19;
+			 uintptr_t m_bIsRevolver = 0xd1a;
+			 uintptr_t m_bCannotShootUnderwater = 0xd1b;
+			 uintptr_t m_szName = 0xd20;
+			 uintptr_t m_szAnimExtension = 0xd28;
+			 uintptr_t m_eSilencerType = 0xd30;
+			 uintptr_t m_nCrosshairMinDistance = 0xd34;
+			 uintptr_t m_nCrosshairDeltaDistance = 0xd38;
+			 uintptr_t m_bIsFullAuto = 0xd3c;
+			 uintptr_t m_nNumBullets = 0xd40;
+			 uintptr_t m_flCycleTime = 0xd44;
+			 uintptr_t m_flMaxSpeed = 0xd4c;
+			 uintptr_t m_flSpread = 0xd54;
+			 uintptr_t m_flInaccuracyCrouch = 0xd5c;
+			 uintptr_t m_flInaccuracyStand = 0xd64;
+			 uintptr_t m_flInaccuracyJump = 0xd6c;
+			 uintptr_t m_flInaccuracyLand = 0xd74;
+			 uintptr_t m_flInaccuracyLadder = 0xd7c;
+			 uintptr_t m_flInaccuracyFire = 0xd84;
+			 uintptr_t m_flInaccuracyMove = 0xd8c;
+			 uintptr_t m_flRecoilAngle = 0xd94;
+			 uintptr_t m_flRecoilAngleVariance = 0xd9c;
+			 uintptr_t m_flRecoilMagnitude = 0xda4;
+			 uintptr_t m_flRecoilMagnitudeVariance = 0xdac;
+			 uintptr_t m_nTracerFrequency = 0xdb4;
+			 uintptr_t m_flInaccuracyJumpInitial = 0xdbc;
+			 uintptr_t m_flInaccuracyJumpApex = 0xdc0;
+			 uintptr_t m_flInaccuracyReload = 0xdc4;
+			 uintptr_t m_nRecoilSeed = 0xdc8;
+			 uintptr_t m_nSpreadSeed = 0xdcc;
+			 uintptr_t m_flTimeToIdleAfterFire = 0xdd0;
+			 uintptr_t m_flIdleInterval = 0xdd4;
+			 uintptr_t m_flAttackMovespeedFactor = 0xdd8;
+			 uintptr_t m_flHeatPerShot = 0xddc;
+			 uintptr_t m_flInaccuracyPitchShift = 0xde0;
+			 uintptr_t m_flInaccuracyAltSoundThreshold = 0xde4;
+			 uintptr_t m_flBotAudibleRange = 0xde8;
+			 uintptr_t m_szUseRadioSubtitle = 0xdf0;
+			 uintptr_t m_bUnzoomsAfterShot = 0xdf8;
+			 uintptr_t m_bHideViewModelWhenZoomed = 0xdf9;
+			 uintptr_t m_nZoomLevels = 0xdfc;
+			 uintptr_t m_nZoomFOV1 = 0xe00;
+			 uintptr_t m_nZoomFOV2 = 0xe04;
+			 uintptr_t m_flZoomTime0 = 0xe08;
+			 uintptr_t m_flZoomTime1 = 0xe0c;
+			 uintptr_t m_flZoomTime2 = 0xe10;
+			 uintptr_t m_flIronSightPullUpSpeed = 0xe14;
+			 uintptr_t m_flIronSightPutDownSpeed = 0xe18;
+			 uintptr_t m_flIronSightFOV = 0xe1c;
+			 uintptr_t m_flIronSightPivotForward = 0xe20;
+			 uintptr_t m_flIronSightLooseness = 0xe24;
+			 uintptr_t m_angPivotAngle = 0xe28;
+			 uintptr_t m_vecIronSightEyePos = 0xe34;
+			 uintptr_t m_nDamage = 0xe40;
+			 uintptr_t m_flHeadshotMultiplier = 0xe44;
+			 uintptr_t m_flArmorRatio = 0xe48;
+			 uintptr_t m_flPenetration = 0xe4c;
+			 uintptr_t m_flRange = 0xe50;
+			 uintptr_t m_flRangeModifier = 0xe54;
+			 uintptr_t m_flFlinchVelocityModifierLarge = 0xe58;
+			 uintptr_t m_flFlinchVelocityModifierSmall = 0xe5c;
+			 uintptr_t m_flRecoveryTimeCrouch = 0xe60;
+			 uintptr_t m_flRecoveryTimeStand = 0xe64;
+			 uintptr_t m_flRecoveryTimeCrouchFinal = 0xe68;
+			 uintptr_t m_flRecoveryTimeStandFinal = 0xe6c;
+			 uintptr_t m_nRecoveryTransitionStartBullet = 0xe70;
+			 uintptr_t m_nRecoveryTransitionEndBullet = 0xe74;
+			 uintptr_t m_flThrowVelocity = 0xe78;
+			 uintptr_t m_vSmokeColor = 0xe7c;
+			 uintptr_t m_szAnimClass = 0xe88;
+		}
+	}
+}

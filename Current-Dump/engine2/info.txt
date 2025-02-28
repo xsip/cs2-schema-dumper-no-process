@@ -1,0 +1,8 @@
+// Current Scope: engine2.dll
+// Number of Classes In Scope: 3
+
+// Classes: 
+//	CScriptComponent ( 1 properties )
+//	CEntityComponent ( 0 properties )
+//	CEntityIdentity ( 11 properties )
+

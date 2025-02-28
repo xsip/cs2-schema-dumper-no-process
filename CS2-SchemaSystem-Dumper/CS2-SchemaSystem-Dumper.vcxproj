@@ -136,6 +136,7 @@
     <ClCompile Include="SchemaLoadingHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CSchemaDumper.hpp" />
     <ClInclude Include="GlobalLoader.hpp" />
     <ClInclude Include="BaseLoader.hpp" />
     <ClInclude Include="CSchemaSystem.h" />

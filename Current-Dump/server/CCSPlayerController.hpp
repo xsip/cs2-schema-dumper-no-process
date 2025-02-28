@@ -1,0 +1,99 @@
+#include <Windows.h>
+
+
+namespace xsip {
+	namespace server {
+		namespace CCSPlayerController {
+			 uintptr_t m_pInGameMoneyServices = 0x788;
+			 uintptr_t m_pInventoryServices = 0x790;
+			 uintptr_t m_pActionTrackingServices = 0x798;
+			 uintptr_t m_pDamageServices = 0x7a0;
+			 uintptr_t m_iPing = 0x7a8;
+			 uintptr_t m_bHasCommunicationAbuseMute = 0x7ac;
+			 uintptr_t m_szCrosshairCodes = 0x7b0;
+			 uintptr_t m_iPendingTeamNum = 0x7b8;
+			 uintptr_t m_flForceTeamTime = 0x7bc;
+			 uintptr_t m_iCompTeammateColor = 0x7c0;
+			 uintptr_t m_bEverPlayedOnTeam = 0x7c4;
+			 uintptr_t m_bAttemptedToGetColor = 0x7c5;
+			 uintptr_t m_iTeammatePreferredColor = 0x7c8;
+			 uintptr_t m_bTeamChanged = 0x7cc;
+			 uintptr_t m_bInSwitchTeam = 0x7cd;
+			 uintptr_t m_bHasSeenJoinGame = 0x7ce;
+			 uintptr_t m_bJustBecameSpectator = 0x7cf;
+			 uintptr_t m_bSwitchTeamsOnNextRoundReset = 0x7d0;
+			 uintptr_t m_bRemoveAllItemsOnNextRoundReset = 0x7d1;
+			 uintptr_t m_flLastJoinTeamTime = 0x7d4;
+			 uintptr_t m_szClan = 0x7d8;
+			 uintptr_t m_szClanName = 0x7e0;
+			 uintptr_t m_iCoachingTeam = 0x800;
+			 uintptr_t m_nPlayerDominated = 0x808;
+			 uintptr_t m_nPlayerDominatingMe = 0x810;
+			 uintptr_t m_iCompetitiveRanking = 0x818;
+			 uintptr_t m_iCompetitiveWins = 0x81c;
+			 uintptr_t m_iCompetitiveRankType = 0x820;
+			 uintptr_t m_iCompetitiveRankingPredicted_Win = 0x824;
+			 uintptr_t m_iCompetitiveRankingPredicted_Loss = 0x828;
+			 uintptr_t m_iCompetitiveRankingPredicted_Tie = 0x82c;
+			 uintptr_t m_nEndMatchNextMapVote = 0x830;
+			 uintptr_t m_unActiveQuestId = 0x834;
+			 uintptr_t m_nQuestProgressReason = 0x838;
+			 uintptr_t m_unPlayerTvControlFlags = 0x83c;
+			 uintptr_t m_iDraftIndex = 0x868;
+			 uintptr_t m_msQueuedModeDisconnectionTimestamp = 0x86c;
+			 uintptr_t m_uiAbandonRecordedReason = 0x870;
+			 uintptr_t m_bCannotBeKicked = 0x874;
+			 uintptr_t m_bEverFullyConnected = 0x875;
+			 uintptr_t m_bAbandonAllowsSurrender = 0x876;
+			 uintptr_t m_bAbandonOffersInstantSurrender = 0x877;
+			 uintptr_t m_bDisconnection1MinWarningPrinted = 0x878;
+			 uintptr_t m_bScoreReported = 0x879;
+			 uintptr_t m_nDisconnectionTick = 0x87c;
+			 uintptr_t m_bControllingBot = 0x888;
+			 uintptr_t m_bHasControlledBotThisRound = 0x889;
+			 uintptr_t m_bHasBeenControlledByPlayerThisRound = 0x88a;
+			 uintptr_t m_nBotsControlledThisRound = 0x88c;
+			 uintptr_t m_bCanControlObservedBot = 0x890;
+			 uintptr_t m_hPlayerPawn = 0x894;
+			 uintptr_t m_hObserverPawn = 0x898;
+			 uintptr_t m_DesiredObserverMode = 0x89c;
+			 uintptr_t m_hDesiredObserverTarget = 0x8a0;
+			 uintptr_t m_bPawnIsAlive = 0x8a4;
+			 uintptr_t m_iPawnHealth = 0x8a8;
+			 uintptr_t m_iPawnArmor = 0x8ac;
+			 uintptr_t m_bPawnHasDefuser = 0x8b0;
+			 uintptr_t m_bPawnHasHelmet = 0x8b1;
+			 uintptr_t m_nPawnCharacterDefIndex = 0x8b2;
+			 uintptr_t m_iPawnLifetimeStart = 0x8b4;
+			 uintptr_t m_iPawnLifetimeEnd = 0x8b8;
+			 uintptr_t m_iPawnBotDifficulty = 0x8bc;
+			 uintptr_t m_hOriginalControllerOfCurrentPawn = 0x8c0;
+			 uintptr_t m_iScore = 0x8c4;
+			 uintptr_t m_iRoundScore = 0x8c8;
+			 uintptr_t m_iRoundsWon = 0x8cc;
+			 uintptr_t m_recentKillQueue = 0x8d0;
+			 uintptr_t m_nFirstKill = 0x8d8;
+			 uintptr_t m_nKillCount = 0x8d9;
+			 uintptr_t m_bMvpNoMusic = 0x8da;
+			 uintptr_t m_eMvpReason = 0x8dc;
+			 uintptr_t m_iMusicKitID = 0x8e0;
+			 uintptr_t m_iMusicKitMVPs = 0x8e4;
+			 uintptr_t m_iMVPs = 0x8e8;
+			 uintptr_t m_nUpdateCounter = 0x8ec;
+			 uintptr_t m_flSmoothedPing = 0x8f0;
+			 uintptr_t m_lastHeldVoteTimer = 0xf998;
+			 uintptr_t m_bShowHints = 0xf9b0;
+			 uintptr_t m_iNextTimeCheck = 0xf9b4;
+			 uintptr_t m_bJustDidTeamKill = 0xf9b8;
+			 uintptr_t m_bPunishForTeamKill = 0xf9b9;
+			 uintptr_t m_bGaveTeamDamageWarning = 0xf9ba;
+			 uintptr_t m_bGaveTeamDamageWarningThisRound = 0xf9bb;
+			 uintptr_t m_dblLastReceivedPacketPlatFloatTime = 0xf9c0;
+			 uintptr_t m_LastTeamDamageWarningTime = 0xf9c8;
+			 uintptr_t m_LastTimePlayerWasDisconnectedForPawnsRemove = 0xf9cc;
+			 uintptr_t m_nSuspiciousHitCount = 0xf9d0;
+			 uintptr_t m_nNonSuspiciousHitStreak = 0xf9d4;
+			 uintptr_t m_bFireBulletsSeedSynchronized = 0xfa79;
+		}
+	}
+}

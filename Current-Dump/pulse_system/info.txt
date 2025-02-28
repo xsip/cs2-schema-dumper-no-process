@@ -1,0 +1,10 @@
+// Current Scope: pulse_system.dll
+// Number of Classes In Scope: 5
+
+// Classes: 
+//	CPulseCursorFuncs ( 0 properties )
+//	CPulseCell_WaitForCursorsWithTagBase::CursorState_t ( 1 properties )
+//	CPulseTestFuncs_LibraryA ( 0 properties )
+//	CPulseCell_WaitForCursorsWithTagBase ( 2 properties )
+//	CPulseCell_WaitForCursorsWithTag ( 2 properties )
+

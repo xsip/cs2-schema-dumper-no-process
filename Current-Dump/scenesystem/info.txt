@@ -1,0 +1,13 @@
+// Current Scope: scenesystem.dll
+// Number of Classes In Scope: 8
+
+// Classes: 
+//	CSSDSEndFrameViewInfo ( 2 properties )
+//	CSSDSMsg_EndFrame ( 1 properties )
+//	SceneViewId_t ( 2 properties )
+//	CSSDSMsg_ViewRender ( 2 properties )
+//	CSSDSMsg_LayerBase ( 6 properties )
+//	CSSDSMsg_ViewTarget ( 10 properties )
+//	CSSDSMsg_ViewTargetList ( 3 properties )
+//	CSSDSMsg_PreLayer ( 0 properties )
+

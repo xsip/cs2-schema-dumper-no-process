@@ -1,0 +1,17 @@
+// Current Scope: materialsystem2.dll
+// Number of Classes In Scope: 12
+
+// Classes: 
+//	MaterialParam_t ( 1 properties )
+//	MaterialParamInt_t ( 1 properties )
+//	MaterialParamFloat_t ( 1 properties )
+//	MaterialParamVector_t ( 1 properties )
+//	MaterialParamTexture_t ( 1 properties )
+//	MaterialParamString_t ( 1 properties )
+//	MaterialParamBuffer_t ( 1 properties )
+//	MaterialResourceData_t ( 14 properties )
+//	PostProcessingTonemapParameters_t ( 15 properties )
+//	PostProcessingBloomParameters_t ( 10 properties )
+//	PostProcessingVignetteParameters_t ( 6 properties )
+//	PostProcessingLocalContrastParameters_t ( 5 properties )
+

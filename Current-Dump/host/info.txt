@@ -1,0 +1,6 @@
+// Current Scope: host.dll
+// Number of Classes In Scope: 1
+
+// Classes: 
+//	CAnimScriptBase ( 1 properties )
+
