@@ -12,9 +12,10 @@ protected:
     BaseLoader() {};
 public:
     inline static const char* basePath = "D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\";
-
+    virtual inline bool Initialize() = 0;
+    virtual inline bool InstallBindings() = 0;
 protected:
-    inline bool Initialize() {
+    inline bool _Initialize() {
 
         if (dllsLoaded)
             return true;
@@ -22,7 +23,7 @@ protected:
         return dllsLoaded = SchemaLoadingHandler::LoadNeededDlls(dllsToLoad, mainDll);
     }
 
-    inline bool InstallBindings() {
+    inline bool _InstallBindings() {
 
         if (bindingsInstalled)
             return true;
@@ -30,7 +31,7 @@ protected:
         return bindingsInstalled = SchemaLoadingHandler::InstallSchemaBindings(mainDll);
 
     }
-
+public:
     std::string *GetModuleNameFromPath() {
         std::string* s = new std::string(mainDll);
         std::string delimiter = "\\";

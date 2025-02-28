@@ -1,5 +1,5 @@
 #pragma once
-#include "../SchemaLoadingHandler.hpp"
+#include "../BaseLoader.hpp"
 
 class VScriptSchemaLoader : public BaseLoader {
 
@@ -18,10 +18,10 @@ public:
 		};
 		mainDll = "game\\bin\\win64\\vscript.dll";
 
-		return BaseLoader::Initialize();
+		return BaseLoader::_Initialize();
 	}
 
 	inline bool InstallBindings() {
-		return BaseLoader::InstallBindings();
+		return BaseLoader::_InstallBindings();
 	}
 };

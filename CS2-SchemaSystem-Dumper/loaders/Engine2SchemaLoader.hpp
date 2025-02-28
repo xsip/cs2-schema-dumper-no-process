@@ -1,5 +1,5 @@
 #pragma once
-#include "../SchemaLoadingHandler.hpp"
+#include "../BaseLoader.hpp"
 
 class Engine2SchemaLoader : public BaseLoader {
 
@@ -20,10 +20,10 @@ public:
 		};
 		mainDll = "game\\bin\\win64\\engine2.dll";
 
-		return BaseLoader::Initialize();
+		return BaseLoader::_Initialize();
 	}
 
 	inline bool InstallBindings() {
-		return BaseLoader::InstallBindings();
+		return BaseLoader::_InstallBindings();
 	}
 };

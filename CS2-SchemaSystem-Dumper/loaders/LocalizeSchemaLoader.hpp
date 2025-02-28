@@ -1,7 +1,7 @@
 // D:\SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\bin\win64\localize.dll
 
 #pragma once
-#include "../SchemaLoadingHandler.hpp"
+#include "../BaseLoader.hpp"
 
 class LocalizeSchemaLoader : public BaseLoader {
 
@@ -21,10 +21,10 @@ public:
 		};
 		mainDll = "game\\bin\\win64\\localize.dll";
 
-		return BaseLoader::Initialize();
+		return BaseLoader::_Initialize();
 	}
 
 	inline bool InstallBindings() {
-		return BaseLoader::InstallBindings();
+		return BaseLoader::_InstallBindings();
 	}
 };

@@ -1,5 +1,5 @@
 #pragma once
-#include "../SchemaLoadingHandler.hpp"
+#include "../BaseLoader.hpp"
 
 class ServerSchemaLoader : public BaseLoader {
 
@@ -18,12 +18,12 @@ public:
 		};
 		mainDll = "game\\csgo\\bin\\win64\\server.dll";
 
-		return BaseLoader::Initialize();
+		return BaseLoader::_Initialize();
 
 	}
 
 	inline bool InstallBindings() {
-		return BaseLoader::InstallBindings();
+		return BaseLoader::_InstallBindings();
 	}
 
 };

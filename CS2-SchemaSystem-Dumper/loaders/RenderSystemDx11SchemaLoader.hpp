@@ -1,7 +1,7 @@
 
 
 #pragma once
-#include "../SchemaLoadingHandler.hpp"
+#include "../BaseLoader.hpp"
 
 class RenderSystemDx11SchemaLoader : public BaseLoader {
 
@@ -22,10 +22,10 @@ public:
 		};
 		mainDll = "game\\bin\\win64\\rendersystemdx11.dll";
 
-		return BaseLoader::Initialize();
+		return BaseLoader::_Initialize();
 	}
 
 	inline bool InstallBindings() {
-		return BaseLoader::InstallBindings();
+		return BaseLoader::_InstallBindings();
 	}
 };

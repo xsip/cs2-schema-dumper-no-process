@@ -1,5 +1,5 @@
 #pragma once
-#include "../SchemaLoadingHandler.hpp"
+#include "../BaseLoader.hpp"
 
 class SceneSystemSchemaLoader : public BaseLoader {
 
@@ -18,11 +18,11 @@ public:
 		};
 		mainDll = "game\\bin\\win64\\scenesystem.dll";
 
-		return BaseLoader::Initialize();
+		return BaseLoader::_Initialize();
 	}
 
 	inline bool InstallBindings() {
-		return BaseLoader::InstallBindings();
+		return BaseLoader::_InstallBindings();
 	}
 
 };

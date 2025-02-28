@@ -1,7 +1,7 @@
 
 
 #pragma once
-#include "../SchemaLoadingHandler.hpp"
+#include "../BaseLoader.hpp"
 
 class NetworkSystemSchemaLoader : public BaseLoader {
 
@@ -23,10 +23,10 @@ public:
 		};
 		mainDll = "game\\bin\\win64\\networksystem.dll";
 
-		return BaseLoader::Initialize();
+		return BaseLoader::_Initialize();
 	}
 
 	inline bool InstallBindings() {
-		return BaseLoader::InstallBindings();
+		return BaseLoader::_InstallBindings();
 	}
 };

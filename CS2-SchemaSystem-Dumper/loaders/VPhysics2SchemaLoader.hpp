@@ -1,5 +1,5 @@
 #pragma once
-#include "../SchemaLoadingHandler.hpp"
+#include "../BaseLoader.hpp"
 
 class VPhysics2SchemaLoader : public BaseLoader {
 
@@ -18,10 +18,10 @@ public:
 		};
 		mainDll = "game\\bin\\win64\\vphysics2.dll";
 
-		return BaseLoader::Initialize();
+		return BaseLoader::_Initialize();
 	}
 
 	inline bool InstallBindings() {
-		return BaseLoader::InstallBindings();
+		return BaseLoader::_InstallBindings();
 	}
 };

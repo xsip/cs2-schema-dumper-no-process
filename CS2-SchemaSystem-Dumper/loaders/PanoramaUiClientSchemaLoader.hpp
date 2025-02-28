@@ -1,5 +1,5 @@
 #pragma once
-#include "../SchemaLoadingHandler.hpp"
+#include "../BaseLoader.hpp"
 
 class PanoramaUiClientSchemaLoader : public BaseLoader {
 
@@ -33,10 +33,10 @@ public:
 		};
 		mainDll = "game\\bin\\win64\\panoramauiclient.dll";
 
-		return BaseLoader::Initialize();
+		return BaseLoader::_Initialize();
 	}
 
 	inline bool InstallBindings() {
-		return BaseLoader::InstallBindings();
+		return BaseLoader::_InstallBindings();
 	}
 };

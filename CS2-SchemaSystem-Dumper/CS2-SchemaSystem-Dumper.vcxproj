@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SchemaLoadingHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GlobalLoader.hpp" />
