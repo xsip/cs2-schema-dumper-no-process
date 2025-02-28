@@ -139,6 +139,11 @@
   <ItemGroup>
     <ClInclude Include="core\CLogService.hpp" />
     <ClInclude Include="CSchemaDumper.hpp" />
+    <ClInclude Include="schema-manager\CSchemaManager.hpp" />
+    <ClInclude Include="schema-manager\CSchemaManagerClass.hpp" />
+    <ClInclude Include="schema-manager\CSchemaManagerField.hpp" />
+    <ClInclude Include="schema-manager\CSchemaManagerModule.hpp" />
+    <ClInclude Include="schema-manager\CTypedSchemManagerGenerator.hpp" />
     <ClInclude Include="SchemaClassInclude.hpp" />
     <ClInclude Include="CGlobalLoader.hpp" />
     <ClInclude Include="BaseLoader.hpp" />
@@ -172,11 +177,6 @@
     <ClInclude Include="loaders\VScriptSchemaLoader.hpp" />
     <ClInclude Include="loaders\WorldRendererSchemaLoader.hpp" />
     <ClInclude Include="memory\PtrCheck.h" />
-    <ClInclude Include="schama-manager\CSchemaManager.hpp" />
-    <ClInclude Include="schama-manager\CSchemaManagerClass.hpp" />
-    <ClInclude Include="schama-manager\CSchemaManagerField.hpp" />
-    <ClInclude Include="schama-manager\CSchemaManagerModule.hpp" />
-    <ClInclude Include="schama-manager\CTypedSchemManagerGenerator.hpp" />
     <ClInclude Include="schema-class\CSchemaClass.hpp" />
     <ClInclude Include="schema-class\CSchemaDeclaredClass.hpp" />
     <ClInclude Include="schema-class\CSchemaDeclaredClassEntry.hpp" />

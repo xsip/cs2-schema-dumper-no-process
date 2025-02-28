@@ -11,8 +11,8 @@
 #include "SchemaClassInclude.hpp"
 #include "CGlobalLoader.hpp"
 #include "CSchemaDumper.hpp"
-#include "schama-manager/CSchemaManager.hpp"
-#include "schama-manager/CTypedSchemManagerGenerator.hpp"
+#include "schema-manager/CSchemaManager.hpp"
+#include "schema-manager/CTypedSchemManagerGenerator.hpp"
 
 #include "core/CLogService.hpp"
 int main(int argc, char* argv[]) {
