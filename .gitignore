@@ -7,3 +7,4 @@ packages
 *.pdb
 *.exe
 enc_temp_folder
+*.mdmp
