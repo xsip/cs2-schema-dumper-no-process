@@ -31,6 +31,9 @@
     <Filter Include="Header Files\SchemaManager">
       <UniqueIdentifier>{bc6f728a-1943-4486-bebc-48ebd6046bde}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{1bc7e008-0e00-418b-89c4-612c23783730}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -143,15 +146,6 @@
     <ClInclude Include="loaders\WorldRendererSchemaLoader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="GlobalLoader.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CSchemaDumper.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CSchemaInclude.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="memory\PtrCheck.h">
       <Filter>Header Files\Memory</Filter>
     </ClInclude>
@@ -182,16 +176,31 @@
     <ClInclude Include="schema-class\CSchemaSystemTypeScope.hpp">
       <Filter>Header Files\SchemaSystem</Filter>
     </ClInclude>
-    <ClInclude Include="schama-manager\CSchemaManager.hpp">
+    <ClInclude Include="SchemaClassInclude.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGlobalLoader.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="core\CLogService.hpp">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CSchemaDumper.hpp">
       <Filter>Header Files\SchemaManager</Filter>
     </ClInclude>
-    <ClInclude Include="schama-manager\CSchemaManagerClass.hpp">
+    <ClInclude Include="schema-manager\CSchemaManager.hpp">
       <Filter>Header Files\SchemaManager</Filter>
     </ClInclude>
-    <ClInclude Include="schama-manager\CSchemaManagerField.hpp">
+    <ClInclude Include="schema-manager\CSchemaManagerClass.hpp">
       <Filter>Header Files\SchemaManager</Filter>
     </ClInclude>
-    <ClInclude Include="schama-manager\CSchemaManagerModule.hpp">
+    <ClInclude Include="schema-manager\CSchemaManagerField.hpp">
+      <Filter>Header Files\SchemaManager</Filter>
+    </ClInclude>
+    <ClInclude Include="schema-manager\CSchemaManagerModule.hpp">
+      <Filter>Header Files\SchemaManager</Filter>
+    </ClInclude>
+    <ClInclude Include="schema-manager\CTypedSchemManagerGenerator.hpp">
       <Filter>Header Files\SchemaManager</Filter>
     </ClInclude>
   </ItemGroup>
