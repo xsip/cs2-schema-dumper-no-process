@@ -3,6 +3,8 @@
 #include "CSchemaManagerField.hpp"
 #include "../schema-class/CSchemaClass.hpp"
 #include "../schema-class/CSchemaDeclaredClass.hpp"
+#include "../core/CLogService.hpp"
+
 class CSchemaManagerClass {
 public:
 	inline static CSchemaManagerClass* EmptyClass = 0x0;
@@ -12,6 +14,8 @@ public:
 		}
 	}
 private:
+	inline static CLogService* pLogger = new CLogService("CSchemaManagerModule");
+
 	SDK::CSchemaClass* data;
 	inline static std::map<const char*, CSchemaManagerField*> fieldMap = {};
 public:
@@ -28,8 +32,12 @@ public:
 
 		for (it = CSchemaManagerClass::fieldMap.begin(); it != CSchemaManagerClass::fieldMap.end(); it++)
 		{
-			if (strcmp(it->first, fieldName) == 0)
+			if (strcmp(it->first, fieldName) == 0) {
+				CSchemaManagerClass::pLogger->Log("Found Field: %s\n", fieldName);
 				return it->second;
+
+
+			}
 		}
 
 		if (!CSchemaManagerField::EmptyField)

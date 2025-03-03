@@ -1,6 +1,6 @@
 #pragma once
 #include "CSchemaHelper.hpp"
-#include "../Memory.hpp"
+#include "../memory/Memory.hpp"
 namespace SDK
 {
 	class CSchemaSystemTypeScope;

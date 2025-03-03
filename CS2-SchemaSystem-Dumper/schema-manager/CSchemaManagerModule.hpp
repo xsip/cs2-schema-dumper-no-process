@@ -33,13 +33,13 @@ public:
 		}
 	}
 
-	CSchemaManagerClass* GetClass(const char* fieldName) {
+	CSchemaManagerClass* GetClass(const char* className) {
 		std::map<const char*, CSchemaManagerClass*>::iterator it;
 
 		for (it = CSchemaManagerModule::classMap.begin(); it != CSchemaManagerModule::classMap.end(); it++)
 		{
-			if (strcmp(it->first, fieldName) == 0) {
-				CSchemaManagerModule::pLogger->Log("Found Field: %s\n", fieldName);
+			if (strcmp(it->first, className) == 0) {
+				CSchemaManagerModule::pLogger->Log("Found Class: %s\n", className);
 				return it->second;
 			}
 		}

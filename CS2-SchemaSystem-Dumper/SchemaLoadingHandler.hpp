@@ -20,7 +20,9 @@ private:
 
 private:
 	inline static CLogService* pLogger = new CLogService("SchemaLoadingHandler");
+public:
 	inline static HINSTANCE schemaSystemDllHandle = NULL;
+private:
 	inline static HINSTANCE tier0DllHandle = NULL;
 	inline static std::map<const char*, HINSTANCE> dependencyMap = std::map<const char*, HINSTANCE>{};
 	inline static std::map<const char*, bool> loadedMainDlls = std::map<const char*, bool>{};

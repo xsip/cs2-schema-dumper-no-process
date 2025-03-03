@@ -34,6 +34,15 @@
     <Filter Include="Header Files\Core">
       <UniqueIdentifier>{1bc7e008-0e00-418b-89c4-612c23783730}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Dumper">
+      <UniqueIdentifier>{07f4f981-0cfb-4fc5-a26c-c1e3dab394eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\InterfaceGrabber">
+      <UniqueIdentifier>{be87d995-1d4c-4bdd-b1cf-5312779b2d73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\InterfaceGrabber">
+      <UniqueIdentifier>{f38916ce-d252-47ca-b899-eb59a551d11e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -42,17 +51,17 @@
     <ClCompile Include="SchemaLoadingHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Memory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="memory\PtrCheck.cpp">
+      <Filter>Source Files\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="interface-grabber\InterfaceGrabber.cpp">
+      <Filter>Source Files\InterfaceGrabber</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\Memory.cpp">
       <Filter>Source Files\Memory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Memory.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SchemaLoadingHandler.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -185,9 +194,6 @@
     <ClInclude Include="core\CLogService.hpp">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="CSchemaDumper.hpp">
-      <Filter>Header Files\SchemaManager</Filter>
-    </ClInclude>
     <ClInclude Include="schema-manager\CSchemaManager.hpp">
       <Filter>Header Files\SchemaManager</Filter>
     </ClInclude>
@@ -202,6 +208,15 @@
     </ClInclude>
     <ClInclude Include="schema-manager\CTypedSchemManagerGenerator.hpp">
       <Filter>Header Files\SchemaManager</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\CSchemaDumper.hpp">
+      <Filter>Header Files\Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="interface-grabber\InterfaceGrabber.hpp">
+      <Filter>Header Files\InterfaceGrabber</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\Memory.hpp">
+      <Filter>Header Files\Memory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

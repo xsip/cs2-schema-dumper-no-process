@@ -2,11 +2,11 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "SchemaClassInclude.hpp"
+#include "../SchemaClassInclude.hpp"
 
-#include "CGlobalLoader.hpp"
-#include "memory/PtrCheck.h"
-#include "core/CLogService.hpp"
+#include "../CGlobalLoader.hpp"
+#include "../memory/PtrCheck.h"
+#include "../core/CLogService.hpp"
 class CSchemaDumper {
 public:
 	inline static CLogService* pLogger = new CLogService("CSchemaDumper");

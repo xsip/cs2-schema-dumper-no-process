@@ -10,20 +10,18 @@
 #include "memory.h"
 #include "SchemaClassInclude.hpp"
 #include "CGlobalLoader.hpp"
-#include "CSchemaDumper.hpp"
+#include "dumper/CSchemaDumper.hpp"
 #include "schema-manager/CSchemaManager.hpp"
 #include "schema-manager/CTypedSchemManagerGenerator.hpp"
+#include "interface-grabber/InterfaceGrabber.hpp"
 
 #include "core/CLogService.hpp"
+
 int main(int argc, char* argv[]) {
 	auto pLogger = new CLogService("Main");
-	// g_Memory.Initialize("cs2.exe");
+
 	SetConsoleTitle("CS2 SchemaDumper");
 	BaseLoader::basePath = "D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\";
-	// printf("pGlobalScope: 0x%x\n", offsetof(SDK::CSchemaSystemTypeScope, pGlobalScope));
-	// printf("m_pDeclaredClasses: 0x%x\n", offsetof(SDK::CSchemaSystemTypeScope, m_pDeclaredClasses));
-	// printf("m_nNumDeclaredClasses: 0x%x\n", offsetof(SDK::CSchemaSystemTypeScope, m_nNumDeclaredClasses));
-	// printf("m_pEnumBindings: 0x%x\n", offsetof(SDK::CSchemaSystemTypeScope, m_pEnumBindings)); // m_nNumDeclaredClasses: 0x456
 
 	if (!CGlobalLoader::Initialize()) {
 		printf("Error initializing!!\n");
@@ -37,12 +35,18 @@ int main(int argc, char* argv[]) {
 			Sleep(50000000);
 		}
 	}
-	CGlobalLoader::GetSchemaSystem()->LogSchemaSystemInfo();
+	auto pSchemaSystem = CGlobalLoader::GetSchemaSystem();
+	pSchemaSystem->LogSchemaSystemInfo();
 	pLogger->Log("Found %i modules in SchemaSystem.\n\n", CGlobalLoader::GetSchemaSystem()->m_nScopeSize);
 	pLogger->Log("m_iHealth: 0x%x\n", CSchemaManager::GetModule("client")->GetClass("C_BaseEntity")->GetField("m_iHealth")->GetOffset());
-	// CTypedSchemaManagerGenerator::CreateEnums("C:\\schema-manager");
-	CSchemaDumper::DumpToFS("C:\\Current-Dump");
 
+	/*typedef uintptr_t(*_Test)();
+	*(uintptr_t*)(CGlobalLoader::GetSchemaSystemHandle() + 0x5A5F0) = NULL;
+	auto lol = (_Test)(CGlobalLoader::GetSchemaSystemHandle() + 0x1030);
+	printf("Res: 0x%p\n", lol());
+	*/
+	// CTypedSchemaManagerGenerator::CreateEnums("C:\\schema-manager");
+	// CSchemaDumper::DumpToFS("C:\\Current-Dump");
 	while (true) {
 		Sleep(50000000);
 	}

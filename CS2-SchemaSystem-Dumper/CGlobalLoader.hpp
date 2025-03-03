@@ -79,4 +79,7 @@ public:
 	inline static SDK::CSchemaSystem* GetSchemaSystem() {
 		return SchemaLoadingHandler::GetSchemaSystem();
 	}
+	inline static uintptr_t GetSchemaSystemHandle() {
+		return (uintptr_t)SchemaLoadingHandler::schemaSystemDllHandle;
+	}
 };

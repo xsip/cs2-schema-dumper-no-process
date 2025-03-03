@@ -1,6 +1,6 @@
 #include "SchemaLoadingHandler.hpp"
 #include "BaseLoader.hpp"
-
+#include "interface-grabber/InterfaceGrabber.hpp"
 
  bool SchemaLoadingHandler::InstallSchemaBindings(const char* _dllName, const char* schema) {
 	 auto dllName = BaseLoader::GetModuleNameFromPath(_dllName)->c_str();
@@ -119,9 +119,13 @@
 		}
 
 
-		if (SchemaLoadingHandler::pSchemaSystem == NULL)
-			SchemaLoadingHandler::pSchemaSystem = SchemaLoadingHandler::GetCreateInterfaceFn<SDK::CSchemaSystem*>("schemasystem.dll")("SchemaSystem_001", NULL);
-
+		if (SchemaLoadingHandler::pSchemaSystem == NULL) {
+			SchemaLoadingHandler::pSchemaSystem = InterfaceGrabber::GetInterface<SDK::CSchemaSystem*>("schemasystem.dll", "SchemaSystem_001");
+			if (!SchemaLoadingHandler::pSchemaSystem) {
+				SchemaLoadingHandler::pLogger->Log("Using fallback to resolve %s\n", "SchemaSystem_001");
+				SchemaLoadingHandler::pSchemaSystem = SchemaLoadingHandler::GetCreateInterfaceFn<SDK::CSchemaSystem*>("schemasystem.dll")("SchemaSystem_001", NULL);
+			}
+		}
 		if (pSchemaSystem == NULL) {
 			SchemaLoadingHandler::pLogger->Log("Couldn't create SchemaSystem_001\n");
 			return false;
