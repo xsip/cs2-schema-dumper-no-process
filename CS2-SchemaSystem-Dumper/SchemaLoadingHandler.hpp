@@ -14,8 +14,8 @@
 class SchemaLoadingHandler {
 private:
 	template<typename T>
-	using _CreateInterface = T (*)(const char* interfaceName, int unknown);
-	
+	using _CreateInterface = T(*)(const char* interfaceName, int unknown);
+
 	typedef uintptr_t(*_InstallSchemaBindings)(const char* interfaceName, SDK::CSchemaSystem* pSchemaSystem);
 
 private:
@@ -36,7 +36,7 @@ private:
 	inline static SDK::CSchemaSystem* pSchemaSystem = NULL;
 
 public:
-	inline static SDK::CSchemaSystem *GetSchemaSystem() {
+	inline static SDK::CSchemaSystem* GetSchemaSystem() {
 		return SchemaLoadingHandler::pSchemaSystem;
 	}
 private:
@@ -44,11 +44,21 @@ private:
 
 	};
 public:
-
-	inline static void LogDependencyMap() {
-		
+	inline static HMODULE GetDependency(const char* dllName) {
 		std::map<const char*, HINSTANCE>::iterator it;
-		
+
+
+		for (it = SchemaLoadingHandler::dependencyMap.begin(); it != SchemaLoadingHandler::dependencyMap.end(); it++)
+		{
+			if (strcmp(it->first, dllName) == 0)
+				return it->second;
+		}
+		return 0x0;
+	}
+	inline static void LogDependencyMap() {
+
+		std::map<const char*, HINSTANCE>::iterator it;
+
 		SchemaLoadingHandler::pLogger->Log("\n\nDependencyMap:\n");
 
 		for (it = SchemaLoadingHandler::dependencyMap.begin(); it != SchemaLoadingHandler::dependencyMap.end(); it++)
@@ -57,7 +67,7 @@ public:
 		}
 	}
 	inline static void LogLoadedMainDlls() {
-		
+
 		std::map<const char*, bool>::iterator it;
 
 		SchemaLoadingHandler::pLogger->Log("\n\nLoaded Main DLLs:\n");
@@ -70,7 +80,7 @@ public:
 	}
 
 	inline static void LogInstalledBindings() {
-		
+
 		std::map<const char*, bool>::iterator it;
 
 		SchemaLoadingHandler::pLogger->Log("\n\nInstalledSchemaBindings:\n");
@@ -118,7 +128,7 @@ public:
 
 	static bool InstallSchemaBindings(const char* dllName, const char* schema = "SchemaSystem_001");
 	static bool LoadNeededDlls(std::vector<const char*> dependencyDlls, const char* mainDll);
-	
+
 	static std::string* GetModuleNameFromPath(const char* dllName) {
 		std::string* s = new std::string(dllName);
 		std::string delimiter = "\\";
